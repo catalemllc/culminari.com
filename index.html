@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Culminari — Retirement income projection for veterans, military retirees, and government employees. See your full financial arc, from today to the horizon.">
+<meta name="theme-color" content="#3D5238">
+<title>Culminari — The highest point</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════════════════════
+   CULMINARI — LANDING PAGE
+   Design System: Topographic / Fieldstone Palette
+   ═══════════════════════════════════════════════════════════ */
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+:root {
+  --sage: #5C7A56;
+  --sage-light: #7A9B73;
+  --sage-dark: #3D5238;
+  --amber: #C0824A;
+  --amber-light: #D4A373;
+  --amber-dark: #A0653A;
+  --earth-bg: #F6F2EB;
+  --earth-warm: #EDE6D9;
+  --earth-deep: #D6CBBA;
+  --stone: #8B8178;
+  --white: #FFFDF9;
+  --text-dark: #2C2825;
+  --text-body: #4A4540;
+  --text-muted: #7A7470;
+  --error: #A3453A;
+  --f-display: 'Fraunces', Georgia, serif;
+  --f-body: 'Source Sans 3', -apple-system, 'Helvetica Neue', sans-serif;
+}
+
+body {
+  font-family: var(--f-body);
+  color: var(--text-body);
+  background: var(--earth-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Nav ── */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 18px 32px;
+  background: rgba(255,253,249,0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--earth-deep);
+  transition: box-shadow 0.3s ease;
+}
+.nav.scrolled { box-shadow: 0 4px 24px rgba(0,0,0,0.06); }
+.nav__logo {
+  display: flex; align-items: center; gap: 8px;
+  font-family: var(--f-display);
+  font-size: 22px; font-weight: 600;
+  color: var(--sage-dark);
+  letter-spacing: -0.5px;
+}
+.nav__icon { flex-shrink: 0; }
+.nav__links { display: flex; gap: 28px; align-items: center; }
+.nav__link {
+  font-size: 14px; font-weight: 500; color: var(--text-muted);
+  text-decoration: none; transition: color 0.2s;
+}
+.nav__link:hover { color: var(--sage); }
+.nav__cta {
+  display: inline-flex; padding: 8px 20px;
+  background: var(--sage); color: var(--white);
+  font-size: 13px; font-weight: 600;
+  border-radius: 10px; text-decoration: none;
+  transition: background 0.2s;
+}
+.nav__cta:hover { background: var(--sage-dark); }
+
+/* ── Hero ── */
+.hero {
+  position: relative;
+  padding: 140px 32px 80px;
+  background: linear-gradient(165deg, #3D5238 0%, #5C7A56 50%, #7A9B73 100%);
+  overflow: hidden;
+  text-align: center;
+}
+.hero::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  background:
+    radial-gradient(ellipse 80% 50% at 20% 80%, rgba(192,130,74,0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 20%, rgba(255,253,249,0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+.hero__content {
+  position: relative; z-index: 1;
+  max-width: 640px; margin: 0 auto;
+}
+.hero__badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 6px 14px; margin-bottom: 28px;
+  background: rgba(255,253,249,0.12);
+  border: 1px solid rgba(255,253,249,0.18);
+  border-radius: 20px;
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 2px; text-transform: uppercase;
+  color: var(--amber-light);
+}
+.hero__title {
+  font-family: var(--f-display);
+  font-size: clamp(36px, 6vw, 56px);
+  font-weight: 700; line-height: 1.1;
+  color: var(--white);
+  margin-bottom: 20px;
+  letter-spacing: -1px;
+}
+.tm {
+  font-size: 0.35em; font-weight: 400;
+  opacity: 0.4; vertical-align: super;
+  letter-spacing: 0;
+}
+.hero__subtitle {
+  font-family: var(--f-display);
+  font-size: clamp(18px, 3vw, 22px);
+  font-weight: 300; font-style: italic;
+  line-height: 1.4;
+  color: var(--amber-light);
+  margin-bottom: 12px;
+}
+.hero__desc {
+  font-size: 16px; font-weight: 300;
+  line-height: 1.6; color: rgba(255,253,249,0.75);
+  max-width: 480px; margin: 0 auto 36px;
+}
+.hero__actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.hero__btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 14px 28px;
+  font-size: 15px; font-weight: 600;
+  border-radius: 12px; text-decoration: none;
+  transition: all 0.25s ease;
+}
+.hero__btn--primary {
+  background: var(--amber); color: var(--white);
+}
+.hero__btn--primary:hover { background: var(--amber-dark); transform: translateY(-1px); }
+.hero__btn--ghost {
+  background: transparent; color: var(--white);
+  border: 1.5px solid rgba(255,253,249,0.3);
+}
+.hero__btn--ghost:hover { border-color: rgba(255,253,249,0.6); background: rgba(255,253,249,0.06); }
+
+/* ── Topo Lines (decorative) ── */
+.hero__topo {
+  position: absolute; bottom: -2px; left: 0; right: 0;
+  height: 80px;
+}
+
+/* ── Section shared ── */
+.section {
+  padding: 80px 32px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+.section--alt { background: var(--white); }
+.section--alt .section__inner { max-width: 960px; margin: 0 auto; }
+.section__eyebrow {
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 2.5px; text-transform: uppercase;
+  color: var(--sage); margin-bottom: 12px;
+}
+.section__title {
+  font-family: var(--f-display);
+  font-size: clamp(28px, 4vw, 36px);
+  font-weight: 600; line-height: 1.2;
+  color: var(--text-dark);
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
+}
+.section__desc {
+  font-size: 16px; font-weight: 300;
+  line-height: 1.6; color: var(--text-muted);
+  max-width: 560px; margin-bottom: 48px;
+}
+
+/* ── Product Cards ── */
+.products { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+
+.product-card {
+  position: relative;
+  padding: 36px 32px;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.product-card:hover { transform: translateY(-3px); }
+
+.product-card--veterans {
+  background: linear-gradient(170deg, #2C3E2A 0%, var(--sage-dark) 100%);
+  color: var(--white);
+}
+.product-card--veterans:hover { box-shadow: 0 20px 60px rgba(61,82,56,0.3); }
+
+.product-card--full {
+  background: var(--white);
+  border: 1px solid var(--earth-deep);
+  color: var(--text-dark);
+}
+.product-card--full:hover { box-shadow: 0 20px 60px rgba(0,0,0,0.08); }
+
+.product-card__badge {
+  display: inline-flex; padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 10px; font-weight: 600;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.product-card--veterans .product-card__badge {
+  background: rgba(255,253,249,0.12); color: var(--amber-light);
+}
+.product-card--full .product-card__badge {
+  background: var(--earth-warm); color: var(--stone);
+}
+
+.product-card__name {
+  font-family: var(--f-display);
+  font-size: 26px; font-weight: 600;
+  line-height: 1.2; margin-bottom: 6px;
+}
+.product-card__tagline {
+  font-family: var(--f-display);
+  font-size: 15px; font-weight: 300; font-style: italic;
+  margin-bottom: 20px;
+}
+.product-card--veterans .product-card__tagline { color: var(--amber-light); }
+.product-card--full .product-card__tagline { color: var(--amber); }
+
+.product-card__desc {
+  font-size: 14px; line-height: 1.6;
+  margin-bottom: 24px;
+}
+.product-card--veterans .product-card__desc { color: rgba(255,253,249,0.75); }
+.product-card--full .product-card__desc { color: var(--text-muted); }
+
+.product-card__features {
+  list-style: none;
+  margin-bottom: 28px;
+}
+.product-card__features li {
+  display: flex; align-items: flex-start; gap: 10px;
+  font-size: 13px; line-height: 1.5;
+  padding: 6px 0;
+}
+.product-card--veterans .product-card__features li { color: rgba(255,253,249,0.85); }
+.product-card--full .product-card__features li { color: var(--text-body); }
+
+.product-card__features li::before {
+  content: '✓';
+  flex-shrink: 0;
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  font-size: 11px; font-weight: 700;
+}
+.product-card--veterans .product-card__features li::before {
+  background: rgba(192,130,74,0.2); color: var(--amber-light);
+}
+.product-card--full .product-card__features li::before {
+  background: rgba(92,122,86,0.12); color: var(--sage);
+}
+
+.product-card__price {
+  font-family: var(--f-display);
+  font-size: 18px; font-weight: 600;
+  margin-bottom: 20px;
+}
+.product-card--veterans .product-card__price { color: var(--white); }
+.product-card--full .product-card__price { color: var(--text-dark); }
+.product-card__price span {
+  font-family: var(--f-body);
+  font-size: 13px; font-weight: 400;
+}
+.product-card__vet-badge {
+  display: inline-block;
+  font-family: var(--f-body);
+  font-size: 10px; font-weight: 600;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  background: rgba(255,253,249,0.15);
+  color: var(--white);
+  padding: 4px 10px;
+  border-radius: 20px;
+  vertical-align: middle;
+  margin-left: 2px;
+}
+.product-card--veterans .product-card__price span { color: rgba(255,253,249,0.5); }
+.product-card--full .product-card__price span { color: var(--text-muted); }
+
+.product-card__cta {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 12px 24px;
+  font-size: 14px; font-weight: 600;
+  border-radius: 10px; text-decoration: none;
+  transition: all 0.2s ease;
+}
+.product-card--veterans .product-card__cta {
+  background: var(--amber); color: var(--white);
+}
+.product-card--veterans .product-card__cta:hover { background: var(--amber-dark); }
+.product-card--full .product-card__cta {
+  background: var(--sage); color: var(--white);
+}
+.product-card--full .product-card__cta:hover { background: var(--sage-dark); }
+
+/* ── How It Works ── */
+.steps {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;
+  margin-top: 48px;
+}
+.step {
+  text-align: center;
+  padding: 32px 20px;
+  background: var(--white);
+  border-radius: 16px;
+  border: 1px solid var(--earth-deep);
+}
+.step__icon {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 52px; height: 52px;
+  background: var(--sage);
+  border-radius: 14px;
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+.step__title {
+  font-family: var(--f-display);
+  font-size: 18px; font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+.step__desc {
+  font-size: 13px; line-height: 1.6;
+  color: var(--text-muted);
+}
+
+/* ── Principles ── */
+.principles {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+  margin-top: 48px;
+}
+.principle {
+  padding: 28px 24px;
+  background: var(--earth-bg);
+  border-radius: 16px;
+}
+.principle__icon { font-size: 28px; margin-bottom: 14px; }
+.principle__title {
+  font-family: var(--f-display);
+  font-size: 17px; font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+.principle__desc {
+  font-size: 13px; line-height: 1.6;
+  color: var(--text-muted);
+}
+
+/* ── Waitlist ── */
+.waitlist {
+  position: relative;
+  padding: 80px 32px;
+  background: linear-gradient(165deg, var(--sage-dark) 0%, var(--sage) 100%);
+  text-align: center;
+  overflow: hidden;
+}
+.waitlist::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(ellipse 70% 60% at 50% 100%, rgba(192,130,74,0.1) 0%, transparent 60%);
+  pointer-events: none;
+}
+.waitlist__content { position: relative; z-index: 1; max-width: 520px; margin: 0 auto; }
+.waitlist__title {
+  font-family: var(--f-display);
+  font-size: clamp(28px, 4vw, 36px);
+  font-weight: 600; line-height: 1.2;
+  color: var(--white);
+  margin-bottom: 12px;
+}
+.waitlist__desc {
+  font-size: 16px; font-weight: 300;
+  line-height: 1.6;
+  color: rgba(255,253,249,0.7);
+  margin-bottom: 36px;
+}
+
+/* ── Mailchimp Embed Container ── */
+/* Replace .waitlist__form internals with your Mailchimp embed code.
+   The surrounding styles will adapt to Mailchimp's generated markup.
+   Sign up at mailchimp.com, create an audience, get embed form code. */
+.waitlist__form {
+  display: flex; gap: 10px;
+  max-width: 440px; margin: 0 auto 16px;
+}
+.waitlist__input {
+  flex: 1;
+  padding: 14px 18px;
+  background: rgba(255,253,249,0.12);
+  border: 1.5px solid rgba(255,253,249,0.2);
+  border-radius: 12px;
+  font-size: 15px; color: var(--white);
+  outline: none;
+  transition: border-color 0.2s;
+}
+.waitlist__input::placeholder { color: rgba(255,253,249,0.4); }
+.waitlist__input:focus { border-color: var(--amber-light); }
+.waitlist__submit {
+  padding: 14px 28px;
+  background: var(--amber); color: var(--white);
+  font-size: 15px; font-weight: 600;
+  border: none; border-radius: 12px;
+  cursor: pointer; transition: background 0.2s;
+}
+.waitlist__submit:hover { background: var(--amber-dark); }
+.waitlist__note {
+  font-size: 12px; color: rgba(255,253,249,0.4);
+}
+
+/* ── Footer ── */
+.footer {
+  padding: 48px 32px 32px;
+  background: var(--text-dark);
+  text-align: center;
+}
+.footer__logo {
+  display: flex; align-items: center; justify-content: center; gap: 6px;
+  font-family: var(--f-display);
+  font-size: 20px; font-weight: 600;
+  color: var(--white);
+  margin-bottom: 6px;
+}
+.footer__brand-line {
+  font-family: var(--f-display);
+  font-size: 13px; font-weight: 300; font-style: italic;
+  color: var(--amber-light);
+  margin-bottom: 24px;
+}
+.footer__links {
+  display: flex; gap: 24px; justify-content: center;
+  margin-bottom: 24px;
+}
+.footer__link {
+  font-size: 13px; color: rgba(255,253,249,0.5);
+  text-decoration: none; transition: color 0.2s;
+}
+.footer__link:hover { color: var(--white); }
+.footer__contact {
+  font-size: 13px; color: rgba(255,253,249,0.4);
+  margin-bottom: 24px;
+}
+.footer__contact a {
+  color: var(--amber-light); text-decoration: none;
+}
+.footer__contact a:hover { text-decoration: underline; }
+.footer__legal {
+  display: flex; gap: 20px; justify-content: center;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255,253,249,0.08);
+}
+.footer__legal-link {
+  font-size: 12px; color: rgba(255,253,249,0.3);
+  text-decoration: none; transition: color 0.2s;
+}
+.footer__legal-link:hover { color: rgba(255,253,249,0.6); }
+.footer__copy {
+  font-size: 11px; color: rgba(255,253,249,0.2);
+  margin-top: 16px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .nav { padding: 14px 20px; }
+  .nav__links { gap: 16px; }
+  .nav__link { display: none; }
+  .hero { padding: 120px 24px 60px; }
+  .section { padding: 60px 24px; }
+  .products { grid-template-columns: 1fr; }
+  .steps { grid-template-columns: 1fr; gap: 16px; }
+  .principles { grid-template-columns: 1fr; gap: 16px; }
+  .waitlist { padding: 60px 24px; }
+  .waitlist__form { flex-direction: column; }
+  .hero__actions { flex-direction: column; align-items: center; }
+  .footer__links { flex-wrap: wrap; }
+  .footer__legal { flex-wrap: wrap; justify-content: center; }
+}
+@media (max-width: 480px) {
+  .nav__cta { padding: 6px 14px; font-size: 12px; }
+}
+
+/* ── Phone Showcase ── */
+.phone-showcase {
+  display: flex; gap: 32px; justify-content: center;
+  margin-top: 48px; flex-wrap: wrap;
+}
+.phone-wrap { text-align: center; max-width: 260px; }
+.phone-frame {
+  position: relative;
+  width: 240px; height: 480px;
+  background: #1a1815;
+  border-radius: 32px;
+  padding: 8px;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.15), inset 0 0 0 1px rgba(255,255,255,0.08);
+}
+.phone-notch {
+  position: absolute; top: 8px; left: 50%; transform: translateX(-50%);
+  width: 80px; height: 22px;
+  background: #1a1815;
+  border-radius: 0 0 14px 14px;
+  z-index: 10;
+}
+.phone-screen {
+  width: 100%; height: 100%;
+  border-radius: 24px;
+  overflow: hidden;
+  background: var(--earth-bg);
+}
+.phone-label {
+  font-family: var(--f-display);
+  font-size: 17px; font-weight: 600;
+  color: var(--text-dark);
+  margin-top: 18px;
+}
+.phone-desc {
+  font-size: 13px; color: var(--text-muted);
+  margin-top: 4px; line-height: 1.4;
+}
+
+/* Mock: Hero screen */
+.mock-hero-screen {
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  height: 100%; padding: 32px 20px;
+  background: linear-gradient(165deg, #3D5238 0%, #5C7A56 50%, #7A9B73 100%);
+  text-align: center;
+}
+.mock-hero-title {
+  font-family: var(--f-display);
+  font-size: 20px; font-weight: 600;
+  color: #fff; margin-bottom: 10px;
+}
+.mock-hero-sub {
+  font-size: 11px; font-weight: 300;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.5; margin-bottom: 16px;
+  max-width: 180px;
+}
+.mock-hero-tagline {
+  font-family: var(--f-display);
+  font-size: 13px; font-weight: 600; font-style: italic;
+  color: var(--amber-light);
+  margin-bottom: 20px;
+}
+.mock-hero-btn {
+  display: inline-block;
+  padding: 10px 22px;
+  background: var(--amber); color: #fff;
+  font-size: 12px; font-weight: 600;
+  border-radius: 10px;
+}
+
+/* Mock: Output screen */
+.mock-output-screen {
+  height: 100%;
+  overflow: hidden;
+  background: var(--earth-bg);
+}
+.mock-nav {
+  display: flex; align-items: center; gap: 6px;
+  padding: 10px 14px;
+  background: var(--white);
+  border-bottom: 1px solid var(--earth-deep);
+}
+.mock-nav-brand {
+  font-family: var(--f-display);
+  font-size: 14px; font-weight: 600;
+  color: var(--sage-dark);
+}
+.mock-nav-brand span { color: var(--amber); }
+.mock-nav-badge {
+  font-size: 7px; font-weight: 600;
+  letter-spacing: 1px; text-transform: uppercase;
+  color: #fff; background: var(--sage);
+  padding: 2px 6px; border-radius: 10px;
+}
+
+.mock-arc-hero { text-align: center; padding: 10px 14px 4px; }
+.mock-arc-title {
+  font-family: var(--f-display);
+  font-size: 14px; font-weight: 600;
+  color: var(--text-dark);
+}
+.mock-arc-sub {
+  font-size: 9px; color: var(--text-muted);
+}
+
+.mock-chart {
+  margin: 6px 10px;
+  background: var(--white);
+  border-radius: 10px;
+  padding: 8px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+  height: 110px;
+}
+.mock-chart svg { width: 100%; height: 100%; }
+
+.mock-card {
+  margin: 8px 10px;
+  padding: 10px 12px;
+  background: var(--white);
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+}
+.mock-eyebrow {
+  font-size: 8px; font-weight: 600;
+  letter-spacing: 1px; text-transform: uppercase;
+  color: var(--sage); margin-bottom: 4px;
+}
+.mock-big-value {
+  font-family: var(--f-display);
+  font-size: 26px; font-weight: 700;
+  color: var(--sage-dark); margin-bottom: 6px;
+}
+.mock-unit {
+  font-size: 12px; font-weight: 400;
+  color: var(--text-muted);
+}
+.mock-stream-row {
+  display: flex; justify-content: space-between;
+  padding: 4px 8px; margin-bottom: 3px;
+  background: var(--earth-bg);
+  border-radius: 6px;
+  font-size: 9px; color: var(--text-body);
+}
+.mock-val-green {
+  font-family: var(--f-display);
+  font-weight: 600; color: var(--sage);
+}
+.mock-val-amber {
+  font-family: var(--f-display);
+  font-weight: 600; color: var(--amber-dark);
+}
+.mock-total-row {
+  display: flex; justify-content: space-between;
+  padding: 6px 8px 2px;
+  border-top: 1.5px solid var(--earth-deep);
+  margin-top: 4px;
+  font-size: 9px; font-weight: 600; color: var(--text-dark);
+}
+
+/* Mock: DIC card */
+.mock-dic-card {
+  margin: 10px 10px 0;
+  padding: 12px 14px;
+  background: linear-gradient(170deg, #2C3E2A 0%, var(--sage-dark) 100%);
+  border-radius: 10px; color: #fff;
+}
+.mock-dic-eyebrow {
+  font-size: 7px; font-weight: 600;
+  letter-spacing: 1px; text-transform: uppercase;
+  color: var(--amber-light); margin-bottom: 4px;
+}
+.mock-dic-title {
+  font-family: var(--f-display);
+  font-size: 13px; font-weight: 600;
+  margin-bottom: 6px;
+}
+.mock-dic-value {
+  font-family: var(--f-display);
+  font-size: 24px; font-weight: 700;
+  color: var(--amber-light);
+}
+.mock-dic-unit {
+  font-size: 11px; font-weight: 400;
+  color: rgba(255,255,255,0.5);
+}
+.mock-dic-sub {
+  font-size: 8px; color: rgba(255,255,255,0.65);
+  margin-top: 4px; line-height: 1.4;
+}
+
+/* Mock: Crossover table */
+.mock-xover-sub {
+  font-size: 8px; color: var(--text-muted);
+  margin-bottom: 6px;
+}
+.mock-xover-table {
+  width: 100%; border-collapse: collapse;
+  font-size: 8px;
+}
+.mock-xover-table th {
+  font-weight: 600; color: var(--text-muted);
+  text-align: center; padding: 3px 2px;
+  border-bottom: 1px solid var(--earth-deep);
+}
+.mock-xover-table td {
+  text-align: center; padding: 3px 2px;
+  font-family: var(--f-display); font-size: 8px; font-weight: 500;
+  border-bottom: 1px solid var(--earth-warm);
+}
+.mock-xover-table td:first-child { font-weight: 600; color: var(--text-dark); }
+.mock-ahead { color: var(--sage); }
+.mock-behind { color: var(--error); }
+.mock-highlight td { background: rgba(92,122,86,0.06); font-weight: 600; }
+
+/* Mock: Alert peek */
+.mock-alert {
+  display: flex; gap: 8px;
+  margin: 8px 10px;
+  padding: 8px 10px;
+  background: var(--white);
+  border-radius: 10px;
+  border-left: 3px solid var(--sage);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+}
+.mock-alert-icon { font-size: 16px; }
+.mock-alert-body { flex: 1; }
+.mock-alert-title {
+  font-size: 9px; font-weight: 600;
+  color: var(--text-dark);
+}
+.mock-alert-text {
+  font-size: 8px; color: var(--text-muted);
+  margin-top: 2px;
+}
+
+@media (max-width: 768px) {
+  .phone-showcase { gap: 40px; }
+  .phone-frame { width: 220px; height: 440px; }
+}
+
+/* ── Fade-in animation ── */
+.fade-up {
+  opacity: 1; transform: translateY(0);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-up.hidden { opacity: 0; transform: translateY(24px); }
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+
+/* ── Reduce motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .fade-up { opacity: 1; transform: none; transition: none; }
+  html { scroll-behavior: auto; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav class="nav" id="nav">
+  <div class="nav__logo"><svg class="nav__icon" width="28" height="28" viewBox="0 0 180 180" aria-hidden="true"><defs><linearGradient id="nav-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#3D5238"/><stop offset="100%" stop-color="#7A9B73"/></linearGradient></defs><rect width="180" height="180" rx="40" fill="url(#nav-g)"/><path d="M35 145 C55 65,70 40,90 40 C110 40,125 65,145 145" fill="none" stroke="rgba(255,255,255,.6)" stroke-width="5" stroke-linecap="round"/><path d="M50 145 C65 60,75 30,90 30 C105 30,115 60,130 145" fill="none" stroke="rgba(255,255,255,.85)" stroke-width="6" stroke-linecap="round"/><circle cx="90" cy="25" r="10" fill="#D4A373"/></svg>Culminari</div>
+  <div class="nav__links">
+    <a href="#veterans" class="nav__link">For Veterans</a>
+    <a href="#full" class="nav__link">Full App</a>
+    <a href="#how" class="nav__link">How It Works</a>
+    <a href="#waitlist" class="nav__cta">Join the Waitlist</a>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="hero__content">
+    <div class="hero__badge">🏔 Service-Disabled Veteran-Owned</div>
+    <svg width="64" height="64" viewBox="0 0 180 180" aria-hidden="true" style="margin-bottom: 20px;">
+      <rect width="180" height="180" rx="40" fill="rgba(255,255,255,0.12)"/>
+      <path d="M15 145 C40 95,60 70,90 70 C120 70,140 95,165 145" fill="none" stroke="rgba(255,255,255,.2)" stroke-width="3" stroke-linecap="round"/>
+      <path d="M25 145 C50 80,65 55,90 55 C115 55,130 80,155 145" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="4" stroke-linecap="round"/>
+      <path d="M35 145 C55 65,70 40,90 40 C110 40,125 65,145 145" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="5" stroke-linecap="round"/>
+      <path d="M50 145 C65 60,75 30,90 30 C105 30,115 60,130 145" fill="none" stroke="rgba(255,255,255,.85)" stroke-width="6" stroke-linecap="round"/>
+      <circle cx="90" cy="25" r="12" fill="#D4A373"/>
+    </svg>
+    <h1 class="hero__title">The highest point.<sup class="tm">™</sup></h1>
+    <p class="hero__subtitle">What everything builds toward.</p>
+    <p class="hero__desc">Retirement income projection for veterans, military retirees, and government employees. Your benefits. Your arc. Your numbers — not averages.</p>
+    <div class="hero__actions">
+      <a href="#veterans" class="hero__btn hero__btn--primary">Culminari for Veterans</a>
+      <a href="#waitlist" class="hero__btn hero__btn--ghost">Join the Waitlist</a>
+    </div>
+  </div>
+  <svg class="hero__topo" viewBox="0 0 1440 80" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 80V52C240 28 480 8 720 16C960 24 1200 52 1440 40V80H0Z" fill="#F6F2EB"/>
+  </svg>
+</section>
+
+<!-- ═══ PRODUCTS ═══ -->
+<section class="section" id="veterans">
+  <div class="fade-up">
+    <div class="section__eyebrow">Two apps, one mission</div>
+    <h2 class="section__title">See your complete retirement arc</h2>
+    <p class="section__desc">Whether you're projecting VA compensation or planning across every income stream, Culminari shows you the math — honestly, on your device, under your control.</p>
+  </div>
+
+  <div class="products fade-up" id="full">
+
+    <!-- Veterans Card -->
+    <div class="product-card product-card--veterans">
+      <svg width="48" height="48" viewBox="0 0 120 120" aria-hidden="true" style="margin-bottom: 16px;"><rect width="120" height="120" rx="26" fill="rgba(255,255,255,0.08)"/><path d="M28 96 C42 45,50 22,60 22 C70 22,78 45,92 96" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="3" stroke-linecap="round"/><path d="M35 96 C45 38,52 16,60 16 C68 16,75 38,85 96" fill="none" stroke="rgba(255,255,255,.8)" stroke-width="3.5" stroke-linecap="round"/><circle cx="60" cy="13" r="7" fill="#D4A373"/></svg>
+      <div class="product-card__badge">Coming Soon — iOS</div>
+      <h3 class="product-card__name">Culminari<span style="color: var(--amber-light);">.</span> <span class="product-card__vet-badge">Veteran</span></h3>
+      <p class="product-card__tagline">Your benefits. For life.</p>
+      <p class="product-card__desc">Built for veterans with VA disability ratings. Project your tax-free compensation and Social Security benefits from today to the horizon.</p>
+      <ul class="product-card__features">
+        <li>VA compensation with annual COLA projections</li>
+        <li>Dependent benefits — adjusts as children age out</li>
+        <li>Social Security at 62, FRA, and 70 with crossover calculator</li>
+        <li>DIC survivor benefit summary for 100% P&T veterans</li>
+        <li>State property tax and vehicle exemptions by county</li>
+        <li>Medicare Part B and Part D premium projections</li>
+        <li>Encrypted on-device storage — no accounts, no servers</li>
+      </ul>
+      <p class="product-card__price">Free <span>— always</span></p>
+      <a href="#waitlist" class="product-card__cta">Get Notified at Launch →</a>
+    </div>
+
+    <!-- Full App Card -->
+    <div class="product-card product-card--full">
+      <svg width="48" height="48" viewBox="0 0 120 120" aria-hidden="true" style="margin-bottom: 16px;"><defs><linearGradient id="pc-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#3D5238"/><stop offset="100%" stop-color="#7A9B73"/></linearGradient></defs><rect width="120" height="120" rx="26" fill="url(#pc-g)"/><path d="M22 96 C37 50,48 30,60 30 C72 30,83 50,98 96" fill="none" stroke="rgba(255,255,255,.3)" stroke-width="2.5" stroke-linecap="round"/><path d="M28 96 C42 45,50 22,60 22 C70 22,78 45,92 96" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="3.5" stroke-linecap="round"/><path d="M35 96 C45 52,52 32,60 32 C68 32,75 52,85 96" fill="none" stroke="rgba(212,163,115,.35)" stroke-width="2.5" stroke-linecap="round"/><path d="M40 96 C48 55,53 38,60 38 C67 38,72 55,80 96" fill="none" stroke="rgba(212,163,115,.7)" stroke-width="3" stroke-linecap="round"/><circle cx="60" cy="18" r="7" fill="#D4A373"/></svg>
+      <div class="product-card__badge">In Development</div>
+      <h3 class="product-card__name">Culminari</h3>
+      <p class="product-card__tagline">Everything you've prepared for.</p>
+      <p class="product-card__desc">Comprehensive retirement income projection across every benefit stream — military, federal, state, private sector, and self-employment.</p>
+      <ul class="product-card__features">
+        <li>Everything in the Veterans app, plus —</li>
+        <li>Military retired pay (BRS and legacy)</li>
+        <li>FERS / CSRS federal pensions</li>
+        <li>TSP, 401(k), IRA, Roth — with RMD projections</li>
+        <li>State and local government pensions</li>
+        <li>IRMAA surcharge and tax bracket modeling</li>
+        <li>Self-employment income and SE tax</li>
+        <li>What-if scenarios and stress testing</li>
+      </ul>
+      <p class="product-card__price">$39.99 <span>one-time purchase</span></p>
+      <a href="#waitlist" class="product-card__cta">Join the Waitlist →</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ APP PREVIEW ═══ -->
+<section class="section section--alt" id="preview">
+  <div class="section__inner">
+    <div class="fade-up" style="text-align: center;">
+      <div class="section__eyebrow">Inside the app</div>
+      <h2 class="section__title" style="margin-left: auto; margin-right: auto;">Designed for clarity, not complexity</h2>
+      <p class="section__desc" style="margin-left: auto; margin-right: auto;">A short wizard builds your profile. Then Culminari projects every benefit stream year by year — your complete arc.</p>
+    </div>
+
+    <div class="phone-showcase fade-up">
+
+      <!-- Phone 1: Onboarding Hero -->
+      <div class="phone-wrap">
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="mock-hero-screen">
+              <svg width="44" height="44" viewBox="0 0 180 180" style="margin-bottom: 12px">
+                <rect width="180" height="180" rx="40" fill="rgba(255,255,255,0.15)"/>
+                <path d="M35 145 C55 65,70 40,90 40 C110 40,125 65,145 145" fill="none" stroke="rgba(255,255,255,.6)" stroke-width="5" stroke-linecap="round"/>
+                <path d="M50 145 C65 60,75 30,90 30 C105 30,115 60,130 145" fill="none" stroke="rgba(255,255,255,.85)" stroke-width="6" stroke-linecap="round"/>
+                <circle cx="90" cy="25" r="10" fill="#D4A373"/>
+              </svg>
+              <div class="mock-hero-title">Culminari for Veterans</div>
+              <div class="mock-hero-sub">What you earned in service stays with you — tax-free, permanent, and growing every year.</div>
+              <div class="mock-hero-tagline">Your benefits. For life.</div>
+              <div class="mock-hero-btn">Get Started →</div>
+            </div>
+          </div>
+        </div>
+        <div class="phone-label">Welcome</div>
+        <div class="phone-desc">Honest language. No jargon. No upsells.</div>
+      </div>
+
+      <!-- Phone 2: Arc Output -->
+      <div class="phone-wrap">
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="mock-output-screen">
+              <!-- Nav -->
+              <div class="mock-nav">
+                <div class="mock-nav-brand">Culminari<span>.</span></div>
+                <div class="mock-nav-badge">Veteran</div>
+              </div>
+              <!-- Arc hero -->
+              <div class="mock-arc-hero">
+                <div class="mock-arc-title">Your Life Arc</div>
+                <div class="mock-arc-sub">Age 42 today · Projected through 90</div>
+              </div>
+              <!-- Chart area -->
+              <div class="mock-chart">
+                <svg viewBox="0 0 280 120" preserveAspectRatio="none">
+                  <!-- Grid -->
+                  <line x1="0" y1="30" x2="280" y2="30" stroke="#D6CBBA" stroke-width="0.5"/>
+                  <line x1="0" y1="60" x2="280" y2="60" stroke="#D6CBBA" stroke-width="0.5"/>
+                  <line x1="0" y1="90" x2="280" y2="90" stroke="#D6CBBA" stroke-width="0.5"/>
+                  <!-- VA area -->
+                  <path d="M0 95 C40 93,80 90,120 86 C160 82,200 78,240 74 L280 70 L280 120 L0 120Z" fill="rgba(92,122,86,0.2)"/>
+                  <!-- VA line -->
+                  <path d="M0 95 C40 93,80 90,120 86 C160 82,200 78,240 74 L280 70" fill="none" stroke="#5C7A56" stroke-width="2.5"/>
+                  <!-- SS band -->
+                  <path d="M140 86 C170 72,200 60,240 48 L280 38 L280 70 L240 74 C200 78,170 82,140 86Z" fill="rgba(192,130,74,0.15)"/>
+                  <!-- SS line -->
+                  <path d="M140 86 C170 72,200 60,240 48 L280 38" fill="none" stroke="#C0824A" stroke-width="2"/>
+                  <!-- Retirement line -->
+                  <line x1="110" y1="10" x2="110" y2="120" stroke="rgba(92,122,86,0.3)" stroke-width="1" stroke-dasharray="3,3"/>
+                  <!-- Labels -->
+                  <text x="50" y="20" fill="#5C7A56" font-size="7" font-weight="600" font-family="Source Sans 3,sans-serif" text-anchor="middle">ACT I</text>
+                  <text x="195" y="20" fill="#5C7A56" font-size="7" font-weight="600" font-family="Source Sans 3,sans-serif" text-anchor="middle">ACT II</text>
+                </svg>
+              </div>
+              <!-- Benefit rows -->
+              <div class="mock-card">
+                <div class="mock-eyebrow">Monthly VA Compensation</div>
+                <div class="mock-big-value">$3,939<span class="mock-unit">/mo</span></div>
+                <div class="mock-stream-row">
+                  <span>Base rate (100%)</span>
+                  <span class="mock-val-green">$3,939</span>
+                </div>
+                <div class="mock-stream-row">
+                  <span>Dependent additions</span>
+                  <span class="mock-val-green">+$220</span>
+                </div>
+                <div class="mock-total-row">
+                  <span>Annual (2026)</span>
+                  <span class="mock-val-amber">$49,908</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="phone-label">Your Arc</div>
+        <div class="phone-desc">Every stream, every year, COLA-adjusted.</div>
+      </div>
+
+      <!-- Phone 3: DIC + Crossover -->
+      <div class="phone-wrap">
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="mock-output-screen">
+              <!-- Nav -->
+              <div class="mock-nav">
+                <div class="mock-nav-brand">Culminari<span>.</span></div>
+                <div class="mock-nav-badge">Veteran</div>
+              </div>
+              <!-- DIC Card -->
+              <div class="mock-dic-card">
+                <div class="mock-dic-eyebrow">Dependency & Indemnity Compensation</div>
+                <div class="mock-dic-title">What your family retains</div>
+                <div class="mock-dic-value">$1,699<span class="mock-dic-unit">/mo</span></div>
+                <div class="mock-dic-sub">Surviving spouse · Tax-free · COLA-adjusted for life</div>
+              </div>
+              <!-- Crossover -->
+              <div class="mock-card" style="margin-top: 10px;">
+                <div class="mock-eyebrow">SS Crossover Calculator</div>
+                <div class="mock-xover-sub">When does waiting to claim pay off?</div>
+                <table class="mock-xover-table">
+                  <thead><tr><th>Age</th><th>@62</th><th>@FRA</th><th>@70</th></tr></thead>
+                  <tbody>
+                    <tr><td>68</td><td>$149k</td><td class="mock-behind">$62k</td><td class="mock-behind">—</td></tr>
+                    <tr><td>74</td><td>$298k</td><td class="mock-ahead">$311k</td><td class="mock-behind">$193k</td></tr>
+                    <tr class="mock-highlight"><td>78</td><td>$397k</td><td class="mock-ahead">$456k</td><td class="mock-ahead">$410k</td></tr>
+                    <tr><td>82</td><td>$497k</td><td class="mock-ahead">$601k</td><td class="mock-ahead">$627k</td></tr>
+                    <tr><td>86</td><td>$596k</td><td class="mock-ahead">$745k</td><td class="mock-ahead">$845k</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- Alert peek -->
+              <div class="mock-alert">
+                <div class="mock-alert-icon">🕐</div>
+                <div class="mock-alert-body">
+                  <div class="mock-alert-title">SS: $14,280/yr difference</div>
+                  <div class="mock-alert-text">Waiting 62→70 adds $1,190/mo</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="phone-label">Survivor & Crossover</div>
+        <div class="phone-desc">DIC for your family. Crossover in your numbers.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ HOW IT WORKS ═══ -->
+<section class="section section--alt" id="how">
+  <div class="section__inner">
+    <div class="fade-up" style="text-align: center;">
+      <div class="section__eyebrow">How it works</div>
+      <h2 class="section__title" style="margin-left: auto; margin-right: auto;">Three steps to your arc</h2>
+      <p class="section__desc" style="margin-left: auto; margin-right: auto;">No accounts. No data collection. Everything stays on your device.</p>
+    </div>
+    <div class="steps fade-up">
+      <div class="step">
+        <div class="step__icon">📋</div>
+        <h3 class="step__title">Tell us about you</h3>
+        <p class="step__desc">A short wizard asks the basics — your rating, dependents, state, and claiming preferences. Three steps, under two minutes.</p>
+      </div>
+      <div class="step">
+        <div class="step__icon"><svg width="24" height="24" viewBox="0 0 180 180"><rect width="180" height="180" rx="40" fill="rgba(255,255,255,0)"/><path d="M35 145 C55 65,70 40,90 40 C110 40,125 65,145 145" fill="none" stroke="rgba(255,255,255,.6)" stroke-width="6" stroke-linecap="round"/><path d="M50 145 C65 60,75 30,90 30 C105 30,115 60,130 145" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="7" stroke-linecap="round"/><circle cx="90" cy="25" r="10" fill="#D4A373"/></svg></div>
+        <h3 class="step__title">See your arc</h3>
+        <p class="step__desc">Culminari projects every income stream year by year, from today to the horizon. COLA, age-outs, crossover points — all visible at a glance.</p>
+      </div>
+      <div class="step">
+        <div class="step__icon">🔒</div>
+        <h3 class="step__title">Your data, your device</h3>
+        <p class="step__desc">Everything is encrypted on your iPhone. No servers, no analytics, no accounts. Export an encrypted backup and save it wherever you choose.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PRINCIPLES ═══ -->
+<section class="section">
+  <div class="fade-up" style="text-align: center;">
+    <div class="section__eyebrow">What we believe</div>
+    <h2 class="section__title" style="margin-left: auto; margin-right: auto;">Built different, on purpose</h2>
+  </div>
+  <div class="principles fade-up">
+    <div class="principle">
+      <div class="principle__icon">🎯</div>
+      <div class="principle__title">Projections, not advice</div>
+      <p class="principle__desc">Culminari applies published government formulas to your inputs. We show you the math — we don't tell you what to do with it.</p>
+    </div>
+    <div class="principle">
+      <div class="principle__icon">🏠</div>
+      <div class="principle__title">Your data stays yours</div>
+      <p class="principle__desc">No user accounts, no analytics, no Catalem servers. Your financial information is encrypted on your device. The full app adds iCloud backup — your cloud, not ours. We never see your data.</p>
+    </div>
+    <div class="principle">
+      <div class="principle__icon">📐</div>
+      <div class="principle__title">Honest, not precise</div>
+      <p class="principle__desc">We show ranges and estimates — not false certainty. The future is uncertain. Your planning tool should acknowledge that.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WAITLIST ═══ -->
+<section class="waitlist" id="waitlist">
+  <div class="waitlist__content fade-up">
+    <h2 class="waitlist__title">Be first to know</h2>
+    <p class="waitlist__desc">Culminari for Veterans launches first on iOS. Drop your email and we'll notify you the moment it's available on the App Store.</p>
+
+    <!-- ═══════════════════════════════════════════════════════
+         MAILCHIMP INTEGRATION
+         Replace this <form> with your Mailchimp embed code.
+         Steps:
+         1. Sign up at mailchimp.com (free tier)
+         2. Create an Audience called "Culminari Waitlist"
+         3. Go to Audience → Signup forms → Embedded forms
+         4. Copy the generated form HTML
+         5. Paste it here, replacing the <form> below
+         6. Style with .waitlist__form, __input, __submit classes
+         ═══════════════════════════════════════════════════════ -->
+    <form class="waitlist__form" id="waitlistForm" onsubmit="return handleWaitlist(event)">
+      <input type="email" class="waitlist__input" placeholder="your.email@example.com" required aria-label="Email address">
+      <button type="submit" class="waitlist__submit">Notify Me</button>
+    </form>
+    <p class="waitlist__note">No spam. One email at launch — that's it.</p>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+  <div class="footer__logo"><svg width="24" height="24" viewBox="0 0 180 180" aria-hidden="true" style="vertical-align: middle; margin-right: 6px;"><defs><linearGradient id="ft-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#7A9B73"/><stop offset="100%" stop-color="#D4A373"/></linearGradient></defs><rect width="180" height="180" rx="40" fill="rgba(255,255,255,0.1)"/><path d="M35 145 C55 65,70 40,90 40 C110 40,125 65,145 145" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="5" stroke-linecap="round"/><path d="M50 145 C65 60,75 30,90 30 C105 30,115 60,130 145" fill="none" stroke="rgba(255,255,255,.65)" stroke-width="6" stroke-linecap="round"/><circle cx="90" cy="25" r="10" fill="#D4A373"/></svg>Culminari</div>
+  <div class="footer__brand-line">The highest point — what everything builds toward.</div>
+  <div class="footer__links">
+    <a href="#veterans" class="footer__link">For Veterans</a>
+    <a href="#full" class="footer__link">Full App</a>
+    <a href="#how" class="footer__link">How It Works</a>
+    <a href="#waitlist" class="footer__link">Waitlist</a>
+  </div>
+  <div class="footer__contact">
+    Questions? <a href="mailto:support@culminari.com">support@culminari.com</a>
+  </div>
+  <div class="footer__legal">
+    <a href="#" class="footer__legal-link">Privacy Policy</a>
+    <a href="#" class="footer__legal-link">Terms of Service</a>
+  </div>
+  <p class="footer__copy">© 2026 Catalem LLC. Culminari™ All rights reserved.</p>
+</footer>
+
+<script>
+// Nav scroll shadow
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 20);
+}, { passive: true });
+
+// Fade-in on scroll
+document.querySelectorAll('.fade-up').forEach(el => el.classList.add('hidden'));
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.remove('hidden');
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+// Waitlist form placeholder — replace with Mailchimp
+function handleWaitlist(e) {
+  e.preventDefault();
+  const input = e.target.querySelector('input');
+  const btn = e.target.querySelector('button');
+  const email = input.value;
+
+  // TODO: Replace this with Mailchimp form submission
+  // For now, show confirmation
+  btn.textContent = 'You are on the list!';
+  btn.style.background = '#5C7A56';
+  btn.disabled = true;
+  input.disabled = true;
+  input.value = '';
+  input.placeholder = 'Thank you!';
+
+  // Store locally as backup until Mailchimp is connected
+  const waitlist = JSON.parse(localStorage.getItem('culminari_waitlist') || '[]');
+  waitlist.push({ email, date: new Date().toISOString() });
+  localStorage.setItem('culminari_waitlist', JSON.stringify(waitlist));
+}
+</script>
+
+</body>
+</html>
