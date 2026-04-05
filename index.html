@@ -1056,19 +1056,10 @@ body {
     <h2 class="waitlist__title">Be first to know</h2>
     <p class="waitlist__desc">Culminari for Veterans launches first on iOS. Drop your email and we'll notify you the moment it's available on the App Store.</p>
 
-    <!-- ═══════════════════════════════════════════════════════
-         MAILCHIMP INTEGRATION
-         Replace this <form> with your Mailchimp embed code.
-         Steps:
-         1. Sign up at mailchimp.com (free tier)
-         2. Create an Audience called "Culminari Waitlist"
-         3. Go to Audience → Signup forms → Embedded forms
-         4. Copy the generated form HTML
-         5. Paste it here, replacing the <form> below
-         6. Style with .waitlist__form, __input, __submit classes
-         ═══════════════════════════════════════════════════════ -->
-    <form class="waitlist__form" id="waitlistForm" onsubmit="return handleWaitlist(event)">
-      <input type="email" class="waitlist__input" placeholder="your.email@example.com" required aria-label="Email address">
+    <!-- Mailchimp Waitlist Form -->
+    <form class="waitlist__form" action="https://culminari.us15.list-manage.com/subscribe/post?u=1443dbae98d26d0efb5acbc99&amp;id=3e2401edd6&amp;f_id=00e5c2e1f0" method="post" target="_blank">
+      <input type="email" name="EMAIL" class="waitlist__input" placeholder="your.email@example.com" required aria-label="Email address">
+      <div aria-hidden="true" style="position: absolute; left: -5000px;"><input type="text" name="b_1443dbae98d26d0efb5acbc99_3e2401edd6" tabindex="-1" value=""></div>
       <button type="submit" class="waitlist__submit">Notify Me</button>
     </form>
     <p class="waitlist__note">No spam. One email at launch — that's it.</p>
@@ -1115,27 +1106,7 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-// Waitlist form placeholder — replace with Mailchimp
-function handleWaitlist(e) {
-  e.preventDefault();
-  const input = e.target.querySelector('input');
-  const btn = e.target.querySelector('button');
-  const email = input.value;
-
-  // TODO: Replace this with Mailchimp form submission
-  // For now, show confirmation
-  btn.textContent = 'You are on the list!';
-  btn.style.background = '#5C7A56';
-  btn.disabled = true;
-  input.disabled = true;
-  input.value = '';
-  input.placeholder = 'Thank you!';
-
-  // Store locally as backup until Mailchimp is connected
-  const waitlist = JSON.parse(localStorage.getItem('culminari_waitlist') || '[]');
-  waitlist.push({ email, date: new Date().toISOString() });
-  localStorage.setItem('culminari_waitlist', JSON.stringify(waitlist));
-}
+// Waitlist powered by Mailchimp — no client-side handling needed
 </script>
 
 </body>
