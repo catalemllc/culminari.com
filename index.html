@@ -475,13 +475,11 @@ body {
   padding-top: 24px;
   border-top: 1px solid rgba(255,253,249,0.08);
 }
-.footer__legal a,
-.footer__legal a:link,
-.footer__legal a:visited {
+.footer__legal-link {
   font-size: 12px; color: rgba(255,253,249,0.3);
   text-decoration: none; transition: color 0.2s;
 }
-.footer__legal a:hover { color: rgba(255,253,249,0.6); }
+.footer__legal-link:hover { color: rgba(255,253,249,0.6); }
 .footer__copy {
   font-size: 11px; color: rgba(255,253,249,0.2);
   margin-top: 16px;
@@ -1086,9 +1084,9 @@ body {
     Questions? <a href="mailto:support@culminari.com">support@culminari.com</a>
   </div>
   <div class="footer__legal">
-    <a href="privacy-veterans.html">Privacy Policy</a>
-    <a href="terms-veterans.html">Terms of Service</a>
-    <a href="eula-veterans.html">EULA</a>
+    <a href="privacy-veterans.html" class="footer__legal-link">Privacy Policy</a>
+    <a href="terms-veterans.html" class="footer__legal-link">Terms of Service</a>
+    <a href="eula-veterans.html" class="footer__legal-link">EULA</a>
   </div>
   <p class="footer__copy">© 2026 Catalem LLC. Culminari™ All rights reserved.</p>
 </footer>
