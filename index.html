@@ -6,6 +6,22 @@
 <meta name="description" content="Culminari — Retirement income projection for veterans, military retirees, and government employees. See your full financial arc, from today to the horizon.">
 <meta name="theme-color" content="#3D5238">
 <title>Culminari — The highest point</title>
+
+<!-- Open Graph (Facebook, LinkedIn, iMessage, Slack, etc.) -->
+<meta property="og:title" content="Culminari — The highest point.">
+<meta property="og:description" content="Retirement income projection for veterans, military retirees, and government employees. Your benefits. Your arc. Your numbers — not averages.">
+<meta property="og:image" content="https://www.culminari.com/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.culminari.com/">
+<meta property="og:site_name" content="Culminari">
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Culminari — The highest point.">
+<meta name="twitter:description" content="Retirement income projection for veterans, military retirees, and government employees.">
+<meta name="twitter:image" content="https://www.culminari.com/og-card.png">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%233D5238'/%3E%3Cstop offset='100%25' stop-color='%237A9B73'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='180' height='180' rx='40' fill='url(%23g)'/%3E%3Cpath d='M35 140 C55 65,70 40,90 40 C110 40,125 65,145 140' fill='none' stroke='rgba(255,255,255,.7)' stroke-width='6' stroke-linecap='round'/%3E%3Ccircle cx='90' cy='35' r='10' fill='%23D4A373'/%3E%3C/svg%3E">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -470,6 +486,24 @@ body {
   color: var(--amber-light); text-decoration: none;
 }
 .footer__contact a:hover { text-decoration: underline; }
+.footer__social {
+  display: flex; gap: 10px; justify-content: center;
+  margin-bottom: 24px;
+}
+.footer__social-link {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: rgba(255,253,249,0.06);
+  color: rgba(255,253,249,0.55);
+  text-decoration: none;
+  transition: color 0.2s, background 0.2s;
+}
+.footer__social-link:hover {
+  color: var(--white);
+  background: rgba(255,253,249,0.12);
+}
+.footer__social-link svg { width: 18px; height: 18px; display: block; }
 .footer__legal {
   display: flex; gap: 20px; justify-content: center;
   padding-top: 24px;
@@ -790,7 +824,7 @@ body {
     </svg>
     <h1 class="hero__title">The highest point.<sup class="tm">™</sup></h1>
     <p class="hero__subtitle">What everything builds toward.</p>
-    <p class="hero__desc">Retirement income projection for veterans, military retirees, and government employees. Your benefits. Your arc. Your numbers — not averages.</p>
+    <p class="hero__desc">Retirement income projection for those who served, served in government, or are planning what's next. Your benefits. Your arc. Your numbers — not averages.</p>
     <div class="hero__actions">
       <a href="#veterans" class="hero__btn hero__btn--primary">Culminari for Veterans</a>
       <a href="#waitlist" class="hero__btn hero__btn--ghost">Join the Waitlist</a>
@@ -848,8 +882,8 @@ body {
         <li>Self-employment income and SE tax</li>
         <li>What-if scenarios and stress testing</li>
       </ul>
-      <p class="product-card__price">$39.99 <span>one-time purchase</span></p>
-      <a href="#waitlist" class="product-card__cta">Join the Waitlist →</a>
+      <p class="product-card__price"><span>Details at launch</span></p>
+      <a href="https://www.facebook.com/culminari" target="_blank" rel="noopener" class="product-card__cta">Building now — follow progress →</a>
     </div>
 
   </div>
@@ -1084,6 +1118,11 @@ body {
   </div>
   <div class="footer__contact">
     Questions? <a href="mailto:support@culminari.com">support@culminari.com</a>
+  </div>
+  <div class="footer__social">
+    <a href="https://www.facebook.com/culminari" class="footer__social-link" aria-label="Culminari on Facebook" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M15.12 5.32H17V2.14A26.11 26.11 0 0 0 14.26 2c-2.72 0-4.58 1.66-4.58 4.7v2.62H6.61v3.56h3.07V22h3.68v-9.12h3.06l.46-3.56h-3.52V7.05c0-1.05.29-1.77 1.76-1.77z"/></svg>
+    </a>
   </div>
   <div class="footer__legal">
     <a href="privacy-veterans.html">Privacy Policy</a>
