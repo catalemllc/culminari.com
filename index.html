@@ -419,9 +419,7 @@ body {
 }
 
 /* ── Mailchimp Embed Container ── */
-/* Replace .waitlist__form internals with your Mailchimp embed code.
-   The surrounding styles will adapt to Mailchimp's generated markup.
-   Sign up at mailchimp.com, create an audience, get embed form code. */
+/* ── Waitlist / Download section ── */
 .waitlist__form {
   display: flex; gap: 10px;
   max-width: 440px; margin: 0 auto 16px;
@@ -806,7 +804,7 @@ body {
     <a href="#veterans" class="nav__link">For Veterans</a>
     <a href="#full" class="nav__link">Full App</a>
     <a href="#how" class="nav__link">How It Works</a>
-    <a href="#waitlist" class="nav__cta">Join the Waitlist</a>
+    <a href="https://apps.apple.com/app/culminari-for-veterans/id6764764024" class="nav__cta" target="_blank" rel="noopener">Download Free</a>
   </div>
 </nav>
 
@@ -827,7 +825,9 @@ body {
     <p class="hero__desc">Retirement income projection for those who served, served in government, or are planning what's next. Your benefits. Your arc. Your numbers — not averages.</p>
     <div class="hero__actions">
       <a href="#veterans" class="hero__btn hero__btn--primary">Culminari for Veterans</a>
-      <a href="#waitlist" class="hero__btn hero__btn--ghost">Join the Waitlist</a>
+      <a href="https://apps.apple.com/app/culminari-for-veterans/id6764764024" target="_blank" rel="noopener">
+        <img src="app-store-badge.svg" alt="Download on the App Store" style="height: 48px;">
+      </a>
     </div>
   </div>
   <svg class="hero__topo" viewBox="0 0 1440 80" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
@@ -848,7 +848,7 @@ body {
     <!-- Veterans Card -->
     <div class="product-card product-card--veterans">
       <svg width="48" height="48" viewBox="0 0 120 120" aria-hidden="true" style="margin-bottom: 16px;"><rect width="120" height="120" rx="26" fill="rgba(255,255,255,0.08)"/><path d="M28 96 C42 45,50 22,60 22 C70 22,78 45,92 96" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="3" stroke-linecap="round"/><path d="M35 96 C45 38,52 16,60 16 C68 16,75 38,85 96" fill="none" stroke="rgba(255,255,255,.8)" stroke-width="3.5" stroke-linecap="round"/><circle cx="60" cy="13" r="7" fill="#D4A373"/></svg>
-      <div class="product-card__badge">Coming Soon — iOS</div>
+      <div class="product-card__badge">Available Now — iOS</div>
       <h3 class="product-card__name">Culminari<span style="color: var(--amber-light);">.</span> <span class="product-card__vet-badge">Veteran</span></h3>
       <p class="product-card__tagline">Your benefits. For life.</p>
       <p class="product-card__desc">Built for veterans with VA disability ratings. Project your tax-free compensation and Social Security benefits from today to the horizon.</p>
@@ -862,7 +862,7 @@ body {
         <li>Encrypted on-device storage — no accounts, no servers</li>
       </ul>
       <p class="product-card__price">Free <span>— always</span></p>
-      <a href="#waitlist" class="product-card__cta">Get Notified at Launch →</a>
+      <a href="https://apps.apple.com/app/culminari-for-veterans/id6764764024" class="product-card__cta" target="_blank" rel="noopener">Download Free →</a>
     </div>
 
     <!-- Full App Card -->
@@ -1090,19 +1090,14 @@ body {
   </div>
 </section>
 
-<!-- ═══ WAITLIST ═══ -->
-<section class="waitlist" id="waitlist">
+<!-- ═══ DOWNLOAD ═══ -->
+<section class="waitlist" id="download">
   <div class="waitlist__content fade-up">
-    <h2 class="waitlist__title">Be first to know</h2>
-    <p class="waitlist__desc">Culminari for Veterans launches first on iOS. Drop your email and we'll notify you the moment it's available on the App Store.</p>
-
-    <!-- Mailchimp Waitlist Form -->
-    <form class="waitlist__form" action="https://culminari.us15.list-manage.com/subscribe/post?u=1443dbae98d26d0efb5acbc99&amp;id=3e2401edd6&amp;f_id=00e5c2e1f0" method="post" target="_blank">
-      <input type="email" name="EMAIL" class="waitlist__input" placeholder="your.email@example.com" required aria-label="Email address">
-      <div aria-hidden="true" style="position: absolute; left: -5000px;"><input type="text" name="b_1443dbae98d26d0efb5acbc99_3e2401edd6" tabindex="-1" value=""></div>
-      <button type="submit" class="waitlist__submit">Notify Me</button>
-    </form>
-    <p class="waitlist__note">No spam. One email at launch — that's it.</p>
+    <h2 class="waitlist__title">It's here.</h2>
+    <p class="waitlist__desc">Culminari for Veterans is free on the App Store. Two benefits. One picture. Your life.</p>
+    <a href="https://apps.apple.com/app/culminari-for-veterans/id6764764024" target="_blank" rel="noopener">
+      <img src="app-store-badge.svg" alt="Download on the App Store" style="height: 54px;">
+    </a>
   </div>
 </section>
 
@@ -1114,7 +1109,7 @@ body {
     <a href="#veterans" class="footer__link">For Veterans</a>
     <a href="#full" class="footer__link">Full App</a>
     <a href="#how" class="footer__link">How It Works</a>
-    <a href="#waitlist" class="footer__link">Waitlist</a>
+    <a href="https://apps.apple.com/app/culminari-for-veterans/id6764764024" class="footer__link" target="_blank" rel="noopener">Download</a>
   </div>
   <div class="footer__contact">
     Questions? <a href="mailto:support@culminari.com">support@culminari.com</a>
@@ -1152,7 +1147,7 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-// Waitlist powered by Mailchimp — no client-side handling needed
+// App Store link — no client-side handling needed
 </script>
 
 </body>
