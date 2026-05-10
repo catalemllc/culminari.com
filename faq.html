@@ -83,16 +83,6 @@ body {
   transition: background 0.2s;
 }
 .nav__cta:hover { background: var(--sage-dark); }
-.nav__pill {
-  display: inline-flex; align-items: center;
-  padding: 3px 10px;
-  background: var(--sage);
-  color: var(--white);
-  font-size: 9px; font-weight: 600;
-  letter-spacing: 1.5px; text-transform: uppercase;
-  border-radius: 20px;
-  margin-left: 2px;
-}
 
 /* ── Hero ── */
 .hero {
@@ -400,8 +390,8 @@ body {
 /* ── Responsive ── */
 @media (max-width: 768px) {
   .nav { padding: 14px 20px; }
-  .nav__links { gap: 16px; }
-  .nav__link { display: none; }
+  .nav__links { gap: 12px; }
+  .nav__link { font-size: 12px; }
   .hero { padding: 120px 24px 48px; }
   .faq-content { padding: 40px 20px 60px; }
   .faq-answer-inner { padding-left: 24px; }
@@ -427,12 +417,10 @@ body {
       <circle cx="90" cy="35" r="10" fill="#D4A373"/>
     </svg>
     Culminari<span style="color: var(--amber);">.</span>
-    <span class="nav__pill">Veteran</span>
   </a>
   <div class="nav__links">
     <a href="index.html" class="nav__link">Home</a>
     <a href="index.html#how" class="nav__link">How It Works</a>
-    <a href="https://apps.apple.com/app/culminari-for-veterans/id6764764024" class="nav__cta" target="_blank" rel="noopener">Download Free</a>
   </div>
 </nav>
 
@@ -460,7 +448,7 @@ body {
       </button>
       <div class="faq-answer">
         <div class="faq-answer-inner">
-          Yes — that's exactly what the app is built for. You enter your estimated monthly benefit from your SSA statement (you can find it at <a href="https://www.ssa.gov/myaccount/" target="_blank" rel="noopener">ssa.gov</a>), pick what age you want to start collecting, and the app projects it forward with annual COLA alongside your VA compensation through age 90. Most people using the app aren't on Social Security yet — they want to see what the full picture looks like when it kicks in.
+          Yes — that's exactly what the app is built for. You enter your estimated monthly benefit from your SSA statement (you can find it at <a href="https://www.ssa.gov/myaccount/" target="_blank" rel="noopener">ssa.gov</a>), pick what age you want to start collecting, and the app projects it forward with annual COLA alongside your VA compensation for the years ahead. Most people using the app aren't on Social Security yet — they want to see what the full picture looks like when it kicks in.
         </div>
       </div>
     </div>
