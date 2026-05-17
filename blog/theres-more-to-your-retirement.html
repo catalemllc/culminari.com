@@ -417,6 +417,32 @@ body {
 
 </article>
 
+<div id="feedback" style="max-width: 680px; margin: 0 auto; padding: 40px 32px 32px; text-align: center;">
+  <div style="font-family: var(--f-display); font-size: 20px; font-weight: 600; color: var(--text-dark); margin-bottom: 20px;">Was this helpful?</div>
+  <div id="feedback-buttons" style="display: flex; justify-content: center; gap: 16px;">
+    <button onclick="sendFeedback('yes')" style="display: flex; align-items: center; gap: 8px; padding: 12px 28px; background: var(--white); border: 1px solid var(--earth-deep); border-radius: 10px; cursor: pointer; font-size: 15px; font-weight: 500; color: var(--text-body); font-family: var(--f-body); transition: border-color 0.2s, background 0.2s;">👍 Yes</button>
+    <button onclick="sendFeedback('no')" style="display: flex; align-items: center; gap: 8px; padding: 12px 28px; background: var(--white); border: 1px solid var(--earth-deep); border-radius: 10px; cursor: pointer; font-size: 15px; font-weight: 500; color: var(--text-body); font-family: var(--f-body); transition: border-color 0.2s, background 0.2s;">👎 Not really</button>
+  </div>
+  <div id="feedback-thanks" style="display: none; padding: 16px 0;">
+    <div style="font-size: 18px; font-weight: 500; color: var(--sage-light); margin-bottom: 4px;">Thanks for the feedback.</div>
+    <div id="feedback-msg" style="font-size: 14px; color: var(--text-muted);"></div>
+  </div>
+</div>
+
+<script>
+function sendFeedback(vote) {
+  gtag('event', 'article_feedback', {
+    article: 'theres-more-to-your-retirement',
+    vote: vote
+  });
+  document.getElementById('feedback-buttons').style.display = 'none';
+  document.getElementById('feedback-thanks').style.display = 'block';
+  document.getElementById('feedback-msg').textContent = vote === 'yes'
+    ? 'Glad it was useful. More articles coming soon.'
+    : 'Noted — we\'ll work on making future posts more useful.';
+}
+</script>
+
 <div style="max-width: 680px; margin: 0 auto; padding: 0 32px 48px;">
   <p style="font-size: 12px; color: var(--text-muted); line-height: 1.6; border-top: 1px solid var(--earth-deep); padding-top: 20px; font-style: italic;">This content is educational and informational only — not financial, tax, or legal advice. Every situation is different. Consult a qualified professional before making decisions about your benefits or retirement.</p>
 </div>
