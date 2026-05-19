@@ -431,10 +431,7 @@ body {
 
 <script>
 function sendFeedback(vote) {
-  gtag('event', 'article_feedback', {
-    article: 'theres-more-to-your-retirement',
-    vote: vote
-  });
+  gtag('event', vote === 'yes' ? 'feedback_yes' : 'feedback_no');
   document.getElementById('feedback-buttons').style.display = 'none';
   document.getElementById('feedback-thanks').style.display = 'block';
   document.getElementById('feedback-msg').textContent = vote === 'yes'
