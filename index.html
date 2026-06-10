@@ -30,7 +30,7 @@
 <meta name="twitter:title" content="Culminari — The highest point.">
 <meta name="twitter:description" content="Retirement income projection for veterans, military retirees, and government employees.">
 <meta name="twitter:image" content="https://www.culminari.com/og-card.png">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%233D5238'/%3E%3Cstop offset='100%25' stop-color='%237A9B73'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='180' height='180' rx='40' fill='url(%23g)'/%3E%3Cpath d='M35 140 C55 65,70 40,90 40 C110 40,125 65,145 140' fill='none' stroke='rgba(255,255,255,.7)' stroke-width='6' stroke-linecap='round'/%3E%3Ccircle cx='90' cy='35' r='10' fill='%23D4A373'/%3E%3C/svg%3E">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22180%22%20height%3D%22180%22%20viewBox%3D%220%200%20180%20180%22%20role%3D%22img%22%20aria-label%3D%22Culminari%22%3E%20%3Crect%20width%3D%22180%22%20height%3D%22180%22%20rx%3D%2240%22%20fill%3D%22%235C7A56%22%2F%3E%20%3Cpath%20d%3D%22M15%20145%20C40%2095%2C60%2070%2C90%2070%20C120%2070%2C140%2095%2C165%20145%22%20fill%3D%22none%22%20stroke%3D%22rgba%28255%2C255%2C255%2C.2%29%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%2F%3E%20%3Cpath%20d%3D%22M25%20145%20C50%2080%2C65%2055%2C90%2055%20C115%2055%2C130%2080%2C155%20145%22%20fill%3D%22none%22%20stroke%3D%22rgba%28255%2C255%2C255%2C.35%29%22%20stroke-width%3D%224%22%20stroke-linecap%3D%22round%22%2F%3E%20%3Cpath%20d%3D%22M35%20145%20C55%2065%2C70%2040%2C90%2040%20C110%2040%2C125%2065%2C145%20145%22%20fill%3D%22none%22%20stroke%3D%22rgba%28255%2C255%2C255%2C.55%29%22%20stroke-width%3D%225%22%20stroke-linecap%3D%22round%22%2F%3E%20%3Cpath%20d%3D%22M50%20145%20C65%2060%2C75%2030%2C90%2030%20C105%2030%2C115%2060%2C130%20145%22%20fill%3D%22none%22%20stroke%3D%22%23C0824A%22%20stroke-width%3D%226%22%20stroke-linecap%3D%22round%22%2F%3E%20%3Ccircle%20cx%3D%2290%22%20cy%3D%2225%22%20r%3D%2212%22%20fill%3D%22%23C0824A%22%2F%3E%20%3C%2Fsvg%3E">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Culminari">
@@ -44,6 +44,15 @@
    ═══════════════════════════════════════════════════════════ */
 
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+.tm { font-size: 0.45em; vertical-align: super; font-weight: 400; opacity: 0.75; letter-spacing: 0; }
+.pill-new {
+  display: inline-block; margin-left: 6px; padding: 1px 7px 2px;
+  background: rgba(192,130,74,0.16); color: var(--amber-light);
+  border: 1px solid rgba(192,130,74,0.35); border-radius: 999px;
+  font-size: 10px; font-weight: 600; letter-spacing: 0.5px; vertical-align: 1px;
+}
+.product-card--full .pill-new { color: var(--amber-dark); }
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 
 :root {
@@ -98,6 +107,7 @@ body {
 .nav__link {
   font-size: 14px; font-weight: 500; color: var(--text-muted);
   text-decoration: none; transition: color 0.2s;
+  white-space: nowrap;
 }
 .nav__link:hover { color: var(--sage); }
 .nav__cta {
@@ -546,6 +556,17 @@ body {
 @media (max-width: 480px) {
   .nav__cta { padding: 6px 14px; font-size: 12px; }
 }
+@media (max-width: 640px) {
+  .nav { flex-direction: column; gap: 6px; padding: 10px 16px 10px; }
+  .nav__logo { font-size: 20px; }
+  .nav__links { gap: 18px; width: 100%; justify-content: center; flex-wrap: nowrap; }
+  .nav__link { font-size: 13px; }
+  .hero { padding-top: 150px; }
+}
+@media (max-width: 400px) {
+  .nav__links { gap: 12px; }
+  .nav__link { font-size: 12px; }
+}
 
 /* ── Phone Showcase ── */
 .phone-showcase {
@@ -804,10 +825,24 @@ body {
 </style>
 </head>
 <body>
+<svg style="display:none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="mark-full" viewBox="0 0 180 180"><rect width="180" height="180" rx="40" fill="#5C7A56"/>
+  <path d="M15 145 C40 95,60 70,90 70 C120 70,140 95,165 145" fill="none" stroke="rgba(255,255,255,.2)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M25 145 C50 80,65 55,90 55 C115 55,130 80,155 145" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="4" stroke-linecap="round"/>
+  <path d="M35 145 C55 65,70 40,90 40 C110 40,125 65,145 145" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="5" stroke-linecap="round"/>
+  <path d="M50 145 C65 60,75 30,90 30 C105 30,115 60,130 145" fill="none" stroke="#C0824A" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="90" cy="25" r="12" fill="#C0824A"/></symbol>
+  <symbol id="mark-veterans" viewBox="0 0 180 180"><rect width="180" height="180" rx="40" fill="#5C7A56"/>
+  <path d="M15 145 C40 95,60 70,90 70 C120 70,140 95,165 145" fill="none" stroke="rgba(255,255,255,.2)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M25 145 C50 80,65 55,90 55 C115 55,130 80,155 145" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="4" stroke-linecap="round"/>
+  <path d="M35 145 C55 65,70 40,90 40 C110 40,125 65,145 145" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="5" stroke-linecap="round"/>
+  <path d="M50 145 C65 60,75 30,90 30 C105 30,115 60,130 145" fill="none" stroke="rgba(255,255,255,.8)" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="90" cy="25" r="12" fill="#C0824A"/></symbol>
+</svg>
 
 <!-- ═══ NAV ═══ -->
 <nav class="nav" id="nav">
-  <div class="nav__logo"><svg class="nav__icon" width="28" height="28" viewBox="0 0 180 180" aria-hidden="true"><defs><linearGradient id="nav-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#3D5238"/><stop offset="100%" stop-color="#7A9B73"/></linearGradient></defs><rect width="180" height="180" rx="40" fill="url(#nav-g)"/><path d="M35 145 C55 65,70 40,90 40 C110 40,125 65,145 145" fill="none" stroke="rgba(255,255,255,.6)" stroke-width="5" stroke-linecap="round"/><path d="M50 145 C65 60,75 30,90 30 C105 30,115 60,130 145" fill="none" stroke="rgba(255,255,255,.85)" stroke-width="6" stroke-linecap="round"/><circle cx="90" cy="25" r="10" fill="#D4A373"/></svg>Culminari</div>
+  <div class="nav__logo"><svg class="nav__icon" width="28" height="28" aria-hidden="true"><use href="#mark-full"/></svg>Culminari<span class="tm">™</span></div>
   <div class="nav__links">
     <a href="#veterans" class="nav__link">For Veterans</a>
     <a href="#full" class="nav__link">Full App</a>
@@ -821,15 +856,8 @@ body {
 <!-- ═══ HERO ═══ -->
 <section class="hero">
   <div class="hero__content">
-    <div class="hero__badge">🏔 Service-Disabled Veteran-Owned</div>
-    <svg width="64" height="64" viewBox="0 0 180 180" aria-hidden="true" style="margin-bottom: 20px;">
-      <rect width="180" height="180" rx="40" fill="rgba(255,255,255,0.12)"/>
-      <path d="M15 145 C40 95,60 70,90 70 C120 70,140 95,165 145" fill="none" stroke="rgba(255,255,255,.2)" stroke-width="3" stroke-linecap="round"/>
-      <path d="M25 145 C50 80,65 55,90 55 C115 55,130 80,155 145" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="4" stroke-linecap="round"/>
-      <path d="M35 145 C55 65,70 40,90 40 C110 40,125 65,145 145" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="5" stroke-linecap="round"/>
-      <path d="M50 145 C65 60,75 30,90 30 C105 30,115 60,130 145" fill="none" stroke="rgba(255,255,255,.85)" stroke-width="6" stroke-linecap="round"/>
-      <circle cx="90" cy="25" r="12" fill="#D4A373"/>
-    </svg>
+    <div class="hero__badge">🏔 Veteran-Owned &amp; Operated</div>
+    <svg width="64" height="64" aria-hidden="true" style="margin-bottom: 20px; border-radius: 14px; box-shadow: 0 8px 24px rgba(0,0,0,.25);"><use href="#mark-full"/></svg>
     <h1 class="hero__title">The highest point.</h1>
     <p class="hero__subtitle">What everything builds toward.</p>
     <p class="hero__desc">Retirement income projection for those who served, served in government, or are planning what's next. Your benefits. Your arc. Your numbers — not averages.</p>
@@ -857,18 +885,21 @@ body {
 
     <!-- Veterans Card -->
     <div class="product-card product-card--veterans">
-      <svg width="48" height="48" viewBox="0 0 120 120" aria-hidden="true" style="margin-bottom: 16px;"><rect width="120" height="120" rx="26" fill="rgba(255,255,255,0.08)"/><path d="M28 96 C42 45,50 22,60 22 C70 22,78 45,92 96" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="3" stroke-linecap="round"/><path d="M35 96 C45 38,52 16,60 16 C68 16,75 38,85 96" fill="none" stroke="rgba(255,255,255,.8)" stroke-width="3.5" stroke-linecap="round"/><circle cx="60" cy="13" r="7" fill="#D4A373"/></svg>
-      <div class="product-card__badge">Available Now — iOS</div>
+      <svg width="48" height="48" aria-hidden="true" style="margin-bottom: 16px; border-radius: 11px;"><use href="#mark-veterans"/></svg>
+      <div class="product-card__badge">Available Now — iOS · v1.1</div>
       <h3 class="product-card__name">Culminari<span style="color: var(--amber-light);">.</span> <span class="product-card__vet-badge">Veteran</span></h3>
       <p class="product-card__tagline">Your benefits. For life.</p>
-      <p class="product-card__desc">Built for veterans with VA disability ratings. Project your tax-free compensation and Social Security benefits from today to the horizon.</p>
+      <p class="product-card__desc">Built for veterans with VA disability ratings. Project your tax-free VA compensation alongside your Social Security retirement benefits — from today to the horizon you choose.</p>
       <ul class="product-card__features">
-        <li>VA compensation with annual COLA projections</li>
+        <li>VA compensation with annual COLA projections — all ratings, 10% to 100%</li>
+        <li>SMC-K special monthly compensation — stack up to three awards <span class="pill-new">v1.1</span></li>
         <li>Dependent benefits — adjusts as children age out</li>
-        <li>Social Security benefits at 62, FRA, and 70 with crossover calculator</li>
+        <li>Social Security benefits claiming slider — any age 62 to 70, with crossover calculator</li>
+        <li>Social Security benefits solvency outlook — the projected trust fund depletion year, shown in your arc <span class="pill-new">v1.1</span></li>
         <li>DIC survivor benefit summary for 100% P&T veterans</li>
+        <li>Medicare Part B and Part D projections — with opt-out for veterans relying on other coverage <span class="pill-new">v1.1</span></li>
         <li>State property tax and vehicle exemptions by county</li>
-        <li>Medicare Part B and Part D premium projections</li>
+        <li>Planning horizon you choose — your arc projects to the age you set <span class="pill-new">v1.1</span></li>
         <li>On-device storage with iOS data protection — no accounts, no servers</li>
       </ul>
       <p class="product-card__price">Free <span>— always</span></p>
@@ -877,7 +908,7 @@ body {
 
     <!-- Full App Card -->
     <div class="product-card product-card--full">
-      <svg width="48" height="48" viewBox="0 0 120 120" aria-hidden="true" style="margin-bottom: 16px;"><defs><linearGradient id="pc-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#3D5238"/><stop offset="100%" stop-color="#7A9B73"/></linearGradient></defs><rect width="120" height="120" rx="26" fill="url(#pc-g)"/><path d="M22 96 C37 50,48 30,60 30 C72 30,83 50,98 96" fill="none" stroke="rgba(255,255,255,.3)" stroke-width="2.5" stroke-linecap="round"/><path d="M28 96 C42 45,50 22,60 22 C70 22,78 45,92 96" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="3.5" stroke-linecap="round"/><path d="M35 96 C45 52,52 32,60 32 C68 32,75 52,85 96" fill="none" stroke="rgba(212,163,115,.35)" stroke-width="2.5" stroke-linecap="round"/><path d="M40 96 C48 55,53 38,60 38 C67 38,72 55,80 96" fill="none" stroke="rgba(212,163,115,.7)" stroke-width="3" stroke-linecap="round"/><circle cx="60" cy="18" r="7" fill="#D4A373"/></svg>
+      <svg width="48" height="48" aria-hidden="true" style="margin-bottom: 16px; border-radius: 11px;"><use href="#mark-full"/></svg>
       <div class="product-card__badge">In Development</div>
       <h3 class="product-card__name">Culminari</h3>
       <p class="product-card__tagline">Everything you've prepared for.</p>
@@ -916,12 +947,7 @@ body {
           <div class="phone-notch"></div>
           <div class="phone-screen">
             <div class="mock-hero-screen">
-              <svg width="44" height="44" viewBox="0 0 180 180" style="margin-bottom: 12px">
-                <rect width="180" height="180" rx="40" fill="rgba(255,255,255,0.15)"/>
-                <path d="M35 145 C55 65,70 40,90 40 C110 40,125 65,145 145" fill="none" stroke="rgba(255,255,255,.6)" stroke-width="5" stroke-linecap="round"/>
-                <path d="M50 145 C65 60,75 30,90 30 C105 30,115 60,130 145" fill="none" stroke="rgba(255,255,255,.85)" stroke-width="6" stroke-linecap="round"/>
-                <circle cx="90" cy="25" r="10" fill="#D4A373"/>
-              </svg>
+              <svg width="44" height="44" aria-hidden="true" style="margin-bottom: 12px; border-radius: 10px;"><use href="#mark-veterans"/></svg>
               <div class="mock-hero-title">Culminari for Veterans</div>
               <div class="mock-hero-sub">What you earned in service stays with you — tax-free, permanent, and growing every year.</div>
               <div class="mock-hero-tagline">Your benefits. For life.</div>
@@ -947,7 +973,7 @@ body {
               <!-- Arc hero -->
               <div class="mock-arc-hero">
                 <div class="mock-arc-title">Your Life Arc</div>
-                <div class="mock-arc-sub">Age 42 today · Projected through 90</div>
+                <div class="mock-arc-sub">Age 42 today · Projected through 100</div>
               </div>
               <!-- Chart area -->
               <div class="mock-chart">
@@ -962,8 +988,13 @@ body {
                   <path d="M0 95 C40 93,80 90,120 86 C160 82,200 78,240 74 L280 70" fill="none" stroke="#5C7A56" stroke-width="2.5"/>
                   <!-- SS band -->
                   <path d="M140 86 C170 72,200 60,240 48 L280 38 L280 70 L240 74 C200 78,170 82,140 86Z" fill="rgba(192,130,74,0.15)"/>
-                  <!-- SS line -->
+                  <!-- SS line (scheduled) -->
                   <path d="M140 86 C170 72,200 60,240 48 L280 38" fill="none" stroke="#C0824A" stroke-width="2"/>
+                  <!-- SS payable band (post-depletion) -->
+                  <path d="M140 86 C170 76,200 67,240 58 L280 50" fill="none" stroke="#C0824A" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.55"/>
+                  <!-- Solvency marker -->
+                  <line x1="34" y1="10" x2="34" y2="120" stroke="rgba(160,101,58,0.45)" stroke-width="1" stroke-dasharray="3,3"/>
+                  <text x="38" y="14" fill="#A0653A" font-size="6.5" font-weight="600" font-family="Source Sans 3,sans-serif">2033</text>
                   <!-- Retirement line -->
                   <line x1="110" y1="10" x2="110" y2="120" stroke="rgba(92,122,86,0.3)" stroke-width="1" stroke-dasharray="3,3"/>
                   <!-- Labels -->
@@ -1015,7 +1046,7 @@ body {
               </div>
               <!-- Crossover -->
               <div class="mock-card" style="margin-top: 10px;">
-                <div class="mock-eyebrow">SS Crossover Calculator</div>
+                <div class="mock-eyebrow">SS Benefits Crossover</div>
                 <div class="mock-xover-sub">When does waiting to claim pay off?</div>
                 <table class="mock-xover-table">
                   <thead><tr><th>Age</th><th>@62</th><th>@FRA</th><th>@70</th></tr></thead>
@@ -1032,7 +1063,7 @@ body {
               <div class="mock-alert">
                 <div class="mock-alert-icon">🕐</div>
                 <div class="mock-alert-body">
-                  <div class="mock-alert-title">SS: $14,280/yr difference</div>
+                  <div class="mock-alert-title">SS Benefits: $14,280/yr difference</div>
                   <div class="mock-alert-text">Waiting 62→70 adds $1,190/mo</div>
                 </div>
               </div>
@@ -1062,7 +1093,7 @@ body {
         <p class="step__desc">A short wizard asks the basics — your rating, dependents, state, and claiming preferences. Three steps, under two minutes.</p>
       </div>
       <div class="step">
-        <div class="step__icon"><svg width="24" height="24" viewBox="0 0 180 180"><rect width="180" height="180" rx="40" fill="rgba(255,255,255,0)"/><path d="M35 145 C55 65,70 40,90 40 C110 40,125 65,145 145" fill="none" stroke="rgba(255,255,255,.6)" stroke-width="6" stroke-linecap="round"/><path d="M50 145 C65 60,75 30,90 30 C105 30,115 60,130 145" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="7" stroke-linecap="round"/><circle cx="90" cy="25" r="10" fill="#D4A373"/></svg></div>
+        <div class="step__icon"><svg width="26" height="26" aria-hidden="true" style="border-radius: 6px;"><use href="#mark-veterans"/></svg></div>
         <h3 class="step__title">See your arc</h3>
         <p class="step__desc">Culminari projects every income stream year by year, from today to the horizon. COLA, age-outs, crossover points — all visible at a glance.</p>
       </div>
@@ -1104,7 +1135,7 @@ body {
 <section class="waitlist" id="download">
   <div class="waitlist__content fade-up">
     <h2 class="waitlist__title">It's here.</h2>
-    <p class="waitlist__desc">Culminari for Veterans is free on the App Store. Two benefits. One picture. Your life.</p>
+    <p class="waitlist__desc">Culminari for Veterans is free on the App Store — now with SMC-K stacking, Medicare opt-out, and a planning horizon you choose. Two benefits. One picture. Your life.</p>
     <a href="https://apps.apple.com/app/culminari-for-veterans/id6764764024" target="_blank" rel="noopener">
       <img src="app-store-badge.svg" alt="Download on the App Store" style="height: 54px;">
     </a>
@@ -1113,7 +1144,7 @@ body {
 
 <!-- ═══ FOOTER ═══ -->
 <footer class="footer">
-  <div class="footer__logo"><svg width="24" height="24" viewBox="0 0 180 180" aria-hidden="true" style="vertical-align: middle; margin-right: 6px;"><defs><linearGradient id="ft-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#7A9B73"/><stop offset="100%" stop-color="#D4A373"/></linearGradient></defs><rect width="180" height="180" rx="40" fill="rgba(255,255,255,0.1)"/><path d="M35 145 C55 65,70 40,90 40 C110 40,125 65,145 145" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="5" stroke-linecap="round"/><path d="M50 145 C65 60,75 30,90 30 C105 30,115 60,130 145" fill="none" stroke="rgba(255,255,255,.65)" stroke-width="6" stroke-linecap="round"/><circle cx="90" cy="25" r="10" fill="#D4A373"/></svg>Culminari</div>
+  <div class="footer__logo"><svg width="24" height="24" aria-hidden="true" style="vertical-align: middle; margin-right: 6px; border-radius: 5px;"><use href="#mark-full"/></svg>Culminari<span class="tm">™</span></div>
   <div class="footer__brand-line">The highest point — what everything builds toward.</div>
   <div class="footer__links">
     <a href="#veterans" class="footer__link">For Veterans</a>
@@ -1136,7 +1167,7 @@ body {
     <a href="terms-veterans.html">Terms of Service</a>
     <a href="eula-veterans.html">EULA</a>
   </div>
-  <p class="footer__copy">© 2026 Catalem LLC. Culminari™ All rights reserved.</p>
+  <p class="footer__copy">© 2026 Catalem LLC. Culminari™. All rights reserved.</p>
 </footer>
 
 <script>
