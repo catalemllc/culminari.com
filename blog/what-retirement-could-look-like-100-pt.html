@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P7E2THF4NW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-P7E2THF4NW');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A scenario walkthrough for a 100% P&T veteran — VA compensation, Social Security retirement benefits, Medicare premiums, and DIC, projected forward. Projections are estimates, not guarantees.">
+<meta name="theme-color" content="#3D5238">
+<title>What Retirement Could Look Like for a 100% P&T Veteran — Culminari</title>
+
+<meta property="og:title" content="What Retirement Could Look Like for a 100% P&T Veteran">
+<meta property="og:description" content="A scenario walkthrough, stream by stream. Projections are estimates, not guarantees.">
+<meta property="og:image" content="https://www.culminari.com/blog/og-100-pt-scenario.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.culminari.com/blog/what-retirement-could-look-like-100-pt.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="What Retirement Could Look Like for a 100% P&T Veteran">
+<meta name="twitter:description" content="A scenario walkthrough, stream by stream. Projections are estimates, not guarantees.">
+<meta name="twitter:image" content="https://www.culminari.com/blog/og-100-pt-scenario.png">
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22180%22%20height%3D%22180%22%20viewBox%3D%220%200%20180%20180%22%20role%3D%22img%22%20aria-label%3D%22Culminari%22%3E%20%3Crect%20width%3D%22180%22%20height%3D%22180%22%20rx%3D%2240%22%20fill%3D%22%235C7A56%22%2F%3E%20%3Cpath%20d%3D%22M15%20145%20C40%2095%2C60%2070%2C90%2070%20C120%2070%2C140%2095%2C165%20145%22%20fill%3D%22none%22%20stroke%3D%22rgba%28255%2C255%2C255%2C.2%29%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%2F%3E%20%3Cpath%20d%3D%22M25%20145%20C50%2080%2C65%2055%2C90%2055%20C115%2055%2C130%2080%2C155%20145%22%20fill%3D%22none%22%20stroke%3D%22rgba%28255%2C255%2C255%2C.35%29%22%20stroke-width%3D%224%22%20stroke-linecap%3D%22round%22%2F%3E%20%3Cpath%20d%3D%22M35%20145%20C55%2065%2C70%2040%2C90%2040%20C110%2040%2C125%2065%2C145%20145%22%20fill%3D%22none%22%20stroke%3D%22rgba%28255%2C255%2C255%2C.55%29%22%20stroke-width%3D%225%22%20stroke-linecap%3D%22round%22%2F%3E%20%3Cpath%20d%3D%22M50%20145%20C65%2060%2C75%2030%2C90%2030%20C105%2030%2C115%2060%2C130%20145%22%20fill%3D%22none%22%20stroke%3D%22%23C0824A%22%20stroke-width%3D%226%22%20stroke-linecap%3D%22round%22%2F%3E%20%3Ccircle%20cx%3D%2290%22%20cy%3D%2225%22%20r%3D%2212%22%20fill%3D%22%23C0824A%22%2F%3E%20%3C%2Fsvg%3E">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+.tm { font-size: 0.45em; vertical-align: super; font-weight: 400; opacity: 0.75; letter-spacing: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+:root {
+  --sage: #5C7A56;
+  --sage-light: #7A9B73;
+  --sage-dark: #3D5238;
+  --amber: #C0824A;
+  --amber-light: #D4A373;
+  --amber-dark: #A0653A;
+  --earth-bg: #F6F2EB;
+  --earth-warm: #EDE6D9;
+  --earth-deep: #D6CBBA;
+  --stone: #8B8178;
+  --white: #FFFDF9;
+  --text-dark: #2C2825;
+  --text-body: #4A4540;
+  --text-muted: #7A7470;
+  --f-display: 'Fraunces', Georgia, serif;
+  --f-body: 'Source Sans 3', -apple-system, 'Helvetica Neue', sans-serif;
+}
+
+body {
+  font-family: var(--f-body);
+  color: var(--text-body);
+  background: var(--earth-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Nav ── */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 18px 32px;
+  background: rgba(255,253,249,0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--earth-deep);
+  transition: box-shadow 0.3s ease;
+}
+.nav.scrolled { box-shadow: 0 4px 24px rgba(0,0,0,0.06); }
+.nav__logo {
+  display: flex; align-items: center; gap: 8px;
+  font-family: var(--f-display);
+  font-size: 22px; font-weight: 600;
+  color: var(--sage-dark);
+  letter-spacing: -0.5px;
+  text-decoration: none;
+}
+.nav__icon { flex-shrink: 0; }
+.nav__links { display: flex; gap: 28px; align-items: center; }
+.nav__link {
+  font-size: 14px; font-weight: 500; color: var(--text-muted);
+  text-decoration: none; transition: color 0.2s;
+}
+.nav__link:hover { color: var(--sage); }
+.nav__link--active { color: var(--sage-dark); font-weight: 600; }
+
+/* ── Article Hero ── */
+.article-hero {
+  padding: 130px 32px 56px;
+  background: linear-gradient(165deg, #3D5238 0%, #5C7A56 50%, #7A9B73 100%);
+  position: relative;
+  overflow: hidden;
+}
+.article-hero::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  background:
+    radial-gradient(ellipse 80% 50% at 20% 80%, rgba(192,130,74,0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 20%, rgba(255,253,249,0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+.article-hero__content {
+  position: relative; z-index: 1;
+  max-width: 680px; margin: 0 auto;
+}
+.article-hero__back {
+  display: inline-block;
+  font-size: 13px; font-weight: 500;
+  color: var(--amber-light);
+  text-decoration: none;
+  margin-bottom: 20px;
+  transition: opacity 0.2s;
+}
+.article-hero__back:hover { opacity: 0.75; }
+.article-hero__meta {
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 14px;
+}
+.article-hero__tag {
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--amber-light);
+}
+.article-hero__date {
+  font-size: 13px; color: rgba(255,253,249,0.55);
+}
+.article-hero__title {
+  font-family: var(--f-display);
+  font-size: clamp(26px, 5vw, 38px);
+  font-weight: 600; line-height: 1.2;
+  color: var(--white);
+}
+
+/* ── Article Body ── */
+.article {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 48px 32px 80px;
+}
+.article p {
+  font-size: 17px; line-height: 1.8;
+  margin-bottom: 20px;
+}
+.article p.lead {
+  font-size: 19px; font-weight: 500;
+  color: var(--text-dark);
+  line-height: 1.7;
+}
+.article h2 {
+  font-family: var(--f-display);
+  font-size: 26px; font-weight: 600;
+  color: var(--sage-dark);
+  margin: 44px 0 16px;
+  line-height: 1.3;
+}
+.article a {
+  color: var(--amber-dark);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.article a:hover { color: var(--amber); }
+
+.callout {
+  background: var(--earth-warm);
+  border-left: 3px solid var(--amber);
+  padding: 20px 24px;
+  margin: 28px 0;
+  border-radius: 0 8px 8px 0;
+}
+.callout p {
+  font-size: 17px; font-weight: 500;
+  color: var(--sage-dark);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.example-box {
+  background: var(--white);
+  padding: 20px 24px;
+  margin: 20px 0;
+  border-radius: 8px;
+  border: 1px solid var(--earth-deep);
+}
+.example-box .item {
+  font-size: 15px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--earth-bg);
+}
+.example-box .item:last-child { border-bottom: none; }
+
+.cta-box {
+  background: var(--sage-dark);
+  padding: 36px 32px;
+  border-radius: 12px;
+  margin: 48px 0 0;
+  text-align: center;
+}
+.cta-box__headline {
+  font-family: var(--f-body);
+  font-size: 18px; font-weight: 500;
+  color: var(--white);
+  margin-bottom: 10px;
+}
+.cta-box__sub {
+  font-size: 15px;
+  color: rgba(255,253,249,0.6);
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+.cta-box__link {
+  display: inline-block;
+  padding: 12px 28px;
+  background: var(--amber);
+  color: var(--white);
+  font-size: 15px; font-weight: 600;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.cta-box__link:hover { background: var(--amber-dark); }
+.cta-box__note {
+  font-size: 12px;
+  color: rgba(255,253,249,0.35);
+  margin-top: 14px;
+  font-style: italic;
+}
+
+/* ── Footer ── */
+.footer {
+  padding: 48px 32px 32px;
+  background: var(--text-dark);
+  text-align: center;
+}
+.footer__logo {
+  display: flex; align-items: center; justify-content: center; gap: 6px;
+  font-family: var(--f-display);
+  font-size: 20px; font-weight: 600;
+  color: var(--white);
+  margin-bottom: 6px;
+}
+.footer__brand-line {
+  font-family: var(--f-display);
+  font-size: 13px; font-weight: 300; font-style: italic;
+  color: var(--amber-light);
+  margin-bottom: 24px;
+}
+.footer__links {
+  display: flex; gap: 24px; justify-content: center;
+  margin-bottom: 24px; flex-wrap: wrap;
+}
+.footer__link {
+  font-size: 13px; color: rgba(255,253,249,0.5);
+  text-decoration: none; transition: color 0.2s;
+}
+.footer__link:hover { color: var(--white); }
+.footer__contact {
+  font-size: 13px; color: rgba(255,253,249,0.4);
+  margin-bottom: 24px;
+}
+.footer__contact a {
+  color: var(--amber-light); text-decoration: none;
+}
+.footer__contact a:hover { text-decoration: underline; }
+.footer__social {
+  display: flex; gap: 10px; justify-content: center;
+  margin-bottom: 24px;
+}
+.footer__social-link {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: rgba(255,253,249,0.06);
+  color: rgba(255,253,249,0.55);
+  text-decoration: none;
+  transition: color 0.2s, background 0.2s;
+}
+.footer__social-link:hover {
+  color: var(--white);
+  background: rgba(255,253,249,0.12);
+}
+.footer__social-link svg { width: 18px; height: 18px; display: block; }
+.footer__legal {
+  display: flex; gap: 20px; justify-content: center;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255,253,249,0.08);
+}
+.footer__legal a {
+  font-size: 12px; color: rgba(255,253,249,0.3);
+  text-decoration: none; transition: color 0.2s;
+}
+.footer__legal a:hover { color: rgba(255,253,249,0.6); }
+.footer__copy {
+  font-size: 11px; color: rgba(255,253,249,0.2);
+  margin-top: 16px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .nav { padding: 14px 20px; }
+  .nav__links { gap: 12px; }
+  .nav__link { font-size: 12px; }
+  .article-hero { padding: 110px 24px 44px; }
+  .article { padding: 36px 20px 60px; }
+  .article p { font-size: 16px; }
+  .article h2 { font-size: 22px; }
+  .cta-box { padding: 28px 20px; }
+  .footer__links { gap: 16px; }
+  .footer__legal { gap: 12px; flex-wrap: wrap; }
+}
+</style>
+</head>
+<body>
+<svg style="display:none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="mark-full" viewBox="0 0 180 180"><rect width="180" height="180" rx="40" fill="#5C7A56"/>
+  <path d="M15 145 C40 95,60 70,90 70 C120 70,140 95,165 145" fill="none" stroke="rgba(255,255,255,.2)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M25 145 C50 80,65 55,90 55 C115 55,130 80,155 145" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="4" stroke-linecap="round"/>
+  <path d="M35 145 C55 65,70 40,90 40 C110 40,125 65,145 145" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="5" stroke-linecap="round"/>
+  <path d="M50 145 C65 60,75 30,90 30 C105 30,115 60,130 145" fill="none" stroke="#C0824A" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="90" cy="25" r="12" fill="#C0824A"/></symbol>
+  <symbol id="mark-veterans" viewBox="0 0 180 180"><rect width="180" height="180" rx="40" fill="#5C7A56"/>
+  <path d="M15 145 C40 95,60 70,90 70 C120 70,140 95,165 145" fill="none" stroke="rgba(255,255,255,.2)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M25 145 C50 80,65 55,90 55 C115 55,130 80,155 145" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="4" stroke-linecap="round"/>
+  <path d="M35 145 C55 65,70 40,90 40 C110 40,125 65,145 145" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="5" stroke-linecap="round"/>
+  <path d="M50 145 C65 60,75 30,90 30 C105 30,115 60,130 145" fill="none" stroke="rgba(255,255,255,.8)" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="90" cy="25" r="12" fill="#C0824A"/></symbol>
+</svg>
+
+
+<nav class="nav" id="nav">
+  <a href="../index.html" class="nav__logo">
+    <svg class="nav__icon" width="28" height="28" aria-hidden="true"><use href="#mark-full"/></svg>
+    Culminari<span class="tm">™</span>
+  </a>
+  <div class="nav__links">
+    <a href="../index.html" class="nav__link">Home</a>
+    <a href="../index.html#how" class="nav__link">How It Works</a>
+    <a href="../faq.html" class="nav__link">FAQ</a>
+    <a href="index.html" class="nav__link nav__link--active">Blog</a>
+  </div>
+</nav>
+
+<section class="article-hero">
+  <div class="article-hero__content">
+    <a href="index.html" class="article-hero__back">← All articles</a>
+    <div class="article-hero__meta">
+      <span class="article-hero__tag">Scenario</span>
+      <span class="article-hero__date">June 9, 2026 · 5 min read</span>
+    </div>
+    <h1 class="article-hero__title">What Retirement Could Look Like for a 100% P&T Veteran</h1>
+  </div>
+</section>
+
+<article class="article">
+
+  <p class="lead">In the first post, I made the case that your retirement picture is bigger than your VA rating. This time, let's make it concrete. Here's a walkthrough of the income streams a 100% P&T veteran might be looking at — and why seeing them together, year by year, changes how the picture reads.</p>
+
+  <p>One thing before we start: every number below is a published 2026 rate or an estimate. Projections are estimates, not guarantees. Your situation is your own.</p>
+
+  <h2>The scenario</h2>
+
+  <p>Picture a veteran, married, rated 100% Permanent and Total. No minor children at home. He's looking at the years ahead and trying to answer one question: what does the income picture actually look like from here?</p>
+
+  <p>Not one agency can answer that for him. So let's walk it stream by stream.</p>
+
+  <h2>VA compensation: the foundation</h2>
+
+  <p>At 100% with a spouse, the 2026 rate is $4,158.17 per month — tax-free, adjusted annually for cost of living. The 2026 COLA was 2.8%.</p>
+
+  <p>This is the number most veterans know cold. It's also the simplest stream in the picture: it doesn't depend on claiming age, work history, or income. It arrives every month, and no tax return ever touches it.</p>
+
+  <h2>Social Security retirement benefits: the timing question</h2>
+
+  <p>Here's where the picture gets interesting. His military pay counted toward Social Security retirement benefits the entire time he served — and so did every civilian job before and after.</p>
+
+  <p>But unlike VA compensation, this stream has a timing decision built in. He can start benefits at 62, at his full retirement age, or as late as 70 — and the monthly amount differs at each point. Claiming early means smaller checks for more years. Waiting means larger checks for fewer years. Where the math crosses over depends on how long he collects.</p>
+
+  <p>There's no universal right answer — and that's the point. It's a decision worth seeing in numbers, projected out over decades, rather than guessing at.</p>
+
+  <p>One more honest note: in their 2026 annual report to Congress, the Social Security Board of Trustees projects the retirement trust fund could be depleted in late 2032, after which incoming revenue would cover about 78 percent of scheduled benefits unless Congress acts. Nobody knows how that resolves. A projection worth looking at shows both pictures — funded and depleted — rather than pretending the question doesn't exist.</p>
+
+  <h2>Medicare: the premium that enters at 65</h2>
+
+  <p>At 65, Medicare enters the picture. The standard Part B premium for 2026 is $202.90 per month, and for most people it comes out of their Social Security benefit payment.</p>
+
+  <p>One thing worth knowing: Medicare premiums are never deducted from VA compensation. Federal law protects that benefit from deductions. The premium affects the Social Security benefits side of the ledger only.</p>
+
+  <h2>DIC: what the family retains</h2>
+
+  <p>This is the stream almost nobody walks veterans through. Dependency and Indemnity Compensation is a tax-free monthly benefit a surviving spouse may qualify for after a 100% P&T veteran passes — in 2026, the base rate is $1,699.36 per month, with possible additions depending on circumstances.</p>
+
+  <p>It's not a pleasant thing to think about. But for a married veteran, it answers a question every spouse quietly carries: what stays if I'm the one left? Knowing that number exists — and roughly what it is — changes the conversation at the kitchen table.</p>
+
+  <h2>Why the streams need to be seen together</h2>
+
+  <p>Each of these numbers moves on its own timeline. VA compensation adjusts every year with COLA. Social Security retirement benefits depend on a claiming decision years away. Medicare premiums arrive at 65 and grow over time. DIC matters at a date nobody can predict.</p>
+
+  <p>Looked at one at a time, they're just figures on different government websites. Laid out together, year by year from today to the horizon, they become something else: an actual picture of where things stand and where they're headed.</p>
+
+  <p>That's what Culminari for Veterans does. It takes the published formulas behind each of these streams and projects them forward — on your phone, with your inputs, without an account. The math, laid out plainly. What you do with it is yours.</p>
+
+  <p><em>Projections are estimates, not guarantees.</em></p>
+
+  <div class="cta-box">
+    <div class="cta-box__headline">No accounts. No data collection. No ads. Just clarity.</div>
+    <div class="cta-box__sub">If you're tired of piecing your retirement together one confusing government site at a time, this was built for you.</div>
+    <a href="https://apps.apple.com/app/culminari-for-veterans/id6764764024" target="_blank" rel="noopener" style="display:inline-block;"><img src="../app-store-badge.svg" alt="Download on the App Store" style="height:44px;"></a>
+    <div class="cta-box__note">Culminari for Veterans is a free retirement income projection tool.</div>
+  </div>
+
+</article>
+
+<div id="feedback" style="max-width: 680px; margin: 0 auto; padding: 40px 32px 32px; text-align: center;">
+  <div style="font-family: var(--f-display); font-size: 20px; font-weight: 600; color: var(--text-dark); margin-bottom: 20px;">Was this helpful?</div>
+  <div id="feedback-buttons" style="display: flex; justify-content: center; gap: 16px;">
+    <button onclick="sendFeedback('yes')" style="display: flex; align-items: center; gap: 8px; padding: 12px 28px; background: var(--white); border: 1px solid var(--earth-deep); border-radius: 10px; cursor: pointer; font-size: 15px; font-weight: 500; color: var(--text-body); font-family: var(--f-body); transition: border-color 0.2s, background 0.2s;">👍 Yes</button>
+    <button onclick="sendFeedback('no')" style="display: flex; align-items: center; gap: 8px; padding: 12px 28px; background: var(--white); border: 1px solid var(--earth-deep); border-radius: 10px; cursor: pointer; font-size: 15px; font-weight: 500; color: var(--text-body); font-family: var(--f-body); transition: border-color 0.2s, background 0.2s;">👎 Not really</button>
+  </div>
+  <div id="feedback-thanks" style="display: none; padding: 16px 0;">
+    <div style="font-size: 18px; font-weight: 500; color: var(--sage-light); margin-bottom: 4px;">Thanks for the feedback.</div>
+    <div id="feedback-msg" style="font-size: 14px; color: var(--text-muted);"></div>
+  </div>
+</div>
+
+<script>
+function sendFeedback(vote) {
+  gtag('event', vote === 'yes' ? 'feedback_yes_100pt' : 'feedback_no_100pt');
+  document.getElementById('feedback-buttons').style.display = 'none';
+  document.getElementById('feedback-thanks').style.display = 'block';
+  document.getElementById('feedback-msg').textContent = vote === 'yes'
+    ? 'Glad it was useful. More articles coming soon.'
+    : 'Noted — we\'ll work on making future posts more useful.';
+}
+</script>
+
+<div style="max-width: 680px; margin: 0 auto; padding: 0 32px 48px;">
+  <p style="font-size: 12px; color: var(--text-muted); line-height: 1.6; border-top: 1px solid var(--earth-deep); padding-top: 20px; font-style: italic;">This content is educational and informational only — not financial, tax, or legal advice. Every situation is different. Consult a qualified professional before making decisions about your benefits or retirement.</p>
+</div>
+
+<footer class="footer">
+  <div class="footer__logo"><svg width="24" height="24" aria-hidden="true" style="vertical-align: middle; margin-right: 6px; border-radius: 5px;"><use href="#mark-full"/></svg>Culminari<span class="tm">™</span></div>
+  <div class="footer__brand-line">The highest point — what everything builds toward.</div>
+  <div class="footer__links">
+    <a href="../index.html" class="footer__link">Home</a>
+    <a href="../index.html#how" class="footer__link">How It Works</a>
+    <a href="../faq.html" class="footer__link">FAQ</a>
+    <a href="index.html" class="footer__link">Blog</a>
+  </div>
+  <div class="footer__contact">
+    Questions? <a href="mailto:support@culminari.com">support@culminari.com</a>
+  </div>
+  <div class="footer__social">
+    <a href="https://www.facebook.com/culminari" class="footer__social-link" aria-label="Culminari on Facebook" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M15.12 5.32H17V2.14A26.11 26.11 0 0 0 14.26 2c-2.72 0-4.58 1.66-4.58 4.7v2.62H6.61v3.56h3.07V22h3.68v-9.12h3.06l.46-3.56h-3.52V7.05c0-1.05.29-1.77 1.76-1.77z"/></svg>
+    </a>
+  </div>
+  <div class="footer__legal">
+    <a href="../privacy-veterans.html">Privacy Policy</a>
+    <a href="../terms-veterans.html">Terms of Service</a>
+    <a href="../eula-veterans.html">EULA</a>
+  </div>
+  <p class="footer__copy">© 2026 Catalem LLC. Culminari™. All rights reserved.</p>
+</footer>
+
+<script>
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 20);
+}, { passive: true });
+</script>
+
+</body>
+</html>
